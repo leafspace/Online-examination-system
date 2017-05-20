@@ -5,4 +5,19 @@
         "http://struts.apache.org/dtds/struts-config_1_2.dtd">
 
 <struts-config>
+    <form-beans>
+        <form-bean name="loginActionForm" type="cn.cslg.Online_examination_system.ActionForm.LoginActionForm" />
+        <form-bean name="resetActionForm" type="cn.cslg.Online_examination_system.ActionForm.ResetActionForm" />
+    </form-beans>
+
+    <action-mappings>
+        <action path="/login" type="cn.cslg.Online_examination_system.Action.LoginAction" name="loginActionForm" scope="request">
+            <forward name="homepage" path="/" />
+            <forward name="error" path="/" />
+        </action>
+        <action path="/reset" type="cn.cslg.Online_examination_system.Action.ResetAction" name="resetActionForm" scope="request">
+            <forward name="homepage" path="/" />
+            <forward name="error" path="/" />
+        </action>
+    </action-mappings>
 </struts-config>
