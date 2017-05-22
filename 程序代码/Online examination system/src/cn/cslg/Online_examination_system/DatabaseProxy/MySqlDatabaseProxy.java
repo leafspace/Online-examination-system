@@ -528,14 +528,68 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
             while(resultSet.next()) {
                 int userID = Integer.parseInt(resultSet.getString(1));
                 int gradeID = Integer.parseInt(resultSet.getString(2));
-                String username = resultSet.getString(2);
-                String password = resultSet.getString(3);
+                String username = resultSet.getString(3);
+                String password = resultSet.getString(4);
                 students.add(new Student(userID, gradeID, username, password, "Student"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return students;
+    }
+
+    public Teacher queryTeacher(int userID) {
+        Teacher teacher = null;
+        String sqlStr = "SELECT * FROM user WHERE userID = " + userID + ";";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        try {
+            if (resultSet.next()) {
+                int gradeID = Integer.parseInt(resultSet.getString(2));
+                String username = resultSet.getString(3);
+                String password = resultSet.getString(4);
+                String identity = resultSet.getString(5);
+                teacher = new Teacher(userID, gradeID, username, password, identity);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return teacher;
+    }
+
+    public Manager queryManager(int userID) {
+        Manager manager = null;
+        String sqlStr = "SELECT * FROM user WHERE userID = " + userID + ";";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        try {
+            if (resultSet.next()) {
+                int gradeID = Integer.parseInt(resultSet.getString(2));
+                String username = resultSet.getString(3);
+                String password = resultSet.getString(4);
+                String identity = resultSet.getString(5);
+                manager = new Manager(userID, gradeID, username, password, identity);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return manager;
+    }
+
+    public Student queryStudent(int userID) {
+        Student student = null;
+        String sqlStr = "SELECT * FROM user WHERE userID = " + userID + ";";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        try {
+            if (resultSet.next()) {
+                int gradeID = Integer.parseInt(resultSet.getString(2));
+                String username = resultSet.getString(3);
+                String password = resultSet.getString(4);
+                String identity = resultSet.getString(5);
+                student = new Student(userID, gradeID, username, password, identity);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return student;
     }
 
 
@@ -576,6 +630,100 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
         int resultNumber = this.databaseConnection.update(sqlStr);
         if(resultNumber != 1) {
             System.out.println("Warning (MySqlDatabaseProxy - deleteStudent) : The effect is wrong ! ");
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Programmar leafspace
+     * Edit time 2017-5-22
+     * @param resultSet 结果集
+     * @return isExist 是否存在结果
+     * Function 用来判断结果集是否存在数据
+     * */
+    private boolean isExist(ResultSet resultSet) {
+        try {
+            return resultSet.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * Programmar leafspace
+     * Edit time 2017-5-22
+     * @param username 用户名
+     * @return isExist 是否存在结果
+     * Function 用来判断此用户名是否存在
+     * */
+    public boolean checkUser(String username) {
+        String sqlStr = "SELECT * FROM user WHERE username = '" + username + "';";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        return this.isExist(resultSet);
+    }
+
+    /**
+     * Programmar leafspace
+     * Edit time 2017-5-22
+     * @param username 用户名
+     * @param password 密码
+     * @return userID 用户ID
+     * Function 用来判断用户名与密码是否匹配
+     *      是 - 返回用户ID
+     *      否 - 返回-1
+     * */
+    public int checkUser(String username, String password) {
+        String sqlStr = "SELECT userID FROM user WHERE username = '" + username + "' AND password = '" + password + "';";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        if(!this.isExist(resultSet)) {
+            return -1;
+        }
+
+        try {
+            return Integer.parseInt(resultSet.getString(1));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return -1;
+    }
+
+    /**
+     * Programmar leafspace
+     * Edit time 2017-5-22
+     * @param userID 用户ID
+     * @return User 用户对象
+     * Function 用来获取某个用户ID所存在的用户对象(Manager,Student,Teacher)
+     * */
+    public User queryIdentity(int userID) {
+        String sqlStr = "SELECT identity FROM user WHERE userID = " + userID + ";";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        try {
+            if(resultSet.next()) {
+                String identity = resultSet.getString(1);
+                switch (identity)
+                {
+                    case "Manager" : return this.queryManager(userID);
+                    case "Student" : return this.queryStudent(userID);
+                    case "Teacher" : return this.queryTeacher(userID);
+                    default: return null;
+                }
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public boolean resetUser(String username) {
+        String sqlStr = "UPDATE user SET password = '123456' WHERE username = '" + username + "';";
+        int resultNumber = this.databaseConnection.update(sqlStr);
+        if(resultNumber != 1) {
+            System.out.println("Warning (MySqlDatabaseProxy - resetUser) : The effect is wrong ! ");
             return false;
         }
         return true;

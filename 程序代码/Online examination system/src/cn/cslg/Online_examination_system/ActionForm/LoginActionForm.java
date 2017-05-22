@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-20
+ * LastEdit: 2017-5-22
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginActionForm extends ActionForm {
     private String username;
     private String password;
+    private String[] remember;
 
     public String getUsername() {
         return this.username;
@@ -25,12 +26,20 @@ public class LoginActionForm extends ActionForm {
         return this.password;
     }
 
+    public String[] getRemember() {
+        return this.remember;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setRemember(String[] remember) {
+        this.remember = remember;
     }
 
     /**

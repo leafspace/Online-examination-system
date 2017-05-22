@@ -193,7 +193,8 @@ public class Teacher extends User {
 	    int gradeID = this.addGrade(gradeName);
 	    if(gradeID >= 0) {
 	        for(int i = 0; i < studentList.size(); ++i) {
-	            this.interfaceDatabaseProxy.addStudent(gradeID, studentList.get(i));
+	        	studentList.get(i).setGradeID(gradeID);
+	            this.interfaceDatabaseProxy.addStudent(studentList.get(i));
             }
         }
 		return gradeID;

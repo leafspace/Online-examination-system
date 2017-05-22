@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-20
+ * LastEdit: 2017-5-22
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -16,11 +16,19 @@ import javax.servlet.http.HttpServletRequest;
 public class ResetActionForm  extends ActionForm {
     private String username;
 
-    public ActionErrors validate(ActionMapping actionMapping, HttpServletRequest request) {
-        return null;
+    public String getUsername() {
+        return this.username;
     }
 
-    public void reset(ActionMapping actionMapping, HttpServletRequest request) {
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
+    public ActionErrors validate(ActionMapping actionMapping, HttpServletRequest request) {
+        if(this.username == null) {
+            this.username = "";
+        }
+        this.username.trim();
+        return null;
     }
 }

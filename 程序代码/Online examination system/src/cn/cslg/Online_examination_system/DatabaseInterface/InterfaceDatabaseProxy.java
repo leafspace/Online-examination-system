@@ -54,6 +54,9 @@ public interface InterfaceDatabaseProxy {
     ArrayList<Exam> queryAllExam();                                                                //查询所有的测试
     ArrayList<Teacher> queryAllTeacher();                                                          //获取所有教师对象
     ArrayList<Student> queryAllStudent();                                                          //获取所有学生对象
+    Teacher queryTeacher(int userID);                                                              //查询某个教师对象
+    Manager queryManager(int userID);                                                              //查询某个管理员对象
+    Student queryStudent(int userID);                                                              //查询某个学生对象
 
     boolean addStudent(Student student);                                                           //添加一个学生
     boolean addTeacher(Teacher teacher);                                                           //添加一个教师
@@ -61,4 +64,10 @@ public interface InterfaceDatabaseProxy {
     boolean updateUser(int userID, String password);                                               //更新用户信息
 
     boolean deleteStudent(int userID);                                                             //依据用户ID删除一个用户
+
+    boolean checkUser(String username);                                                            //检查系统中是否存在username的用户
+    int checkUser(String username, String password);                                               //检查系统中username用户的密码是否正确
+    User queryIdentity(int userID);                                                                //依据用户ID查询用户对象
+
+    boolean resetUser(String username);                                                            //只知道用户名的情况下重置用户
 }
