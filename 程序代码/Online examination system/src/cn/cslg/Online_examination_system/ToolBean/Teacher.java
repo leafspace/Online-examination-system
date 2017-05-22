@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-21
+ * LastEdit: 2017-5-22
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -47,7 +47,7 @@ public class Teacher extends User {
      * @function 依据课程信息添加一个课程
 	 */
 	public int addCourse(String courseName, String courseInformation) {
-        boolean isSuccess = this.interfaceDatabaseProxy.addCourse(new Course(courseName, courseInformation));
+        boolean isSuccess = this.interfaceDatabaseProxy.addCourse(this.userID, new Course(courseName, courseInformation));
         if(isSuccess) {
             Course course = this.interfaceDatabaseProxy.queryCourse(this.userID, courseName, courseInformation);
             return course.getCourseID();

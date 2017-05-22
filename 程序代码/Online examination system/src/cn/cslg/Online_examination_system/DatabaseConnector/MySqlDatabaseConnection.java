@@ -5,7 +5,7 @@ import cn.cslg.Online_examination_system.DatabaseInterface.InterfaceDatabaseConn
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-20
+ * LastEdit: 2017-5-22
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -37,13 +37,14 @@ public class MySqlDatabaseConnection implements InterfaceDatabaseConnection {
 		return null;
 	}
 
-	public void update(String sql) {
+	public int update(String sql) {
 		try {
 			preparedStatement = this.connection.prepareStatement(sql);
-			preparedStatement.executeUpdate();
+			return preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return 0;
 	}
 
 	public ResultSet query(String sql){

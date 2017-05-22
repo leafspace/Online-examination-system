@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-21
+ * LastEdit: 2017-5-22
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -34,7 +34,7 @@ public interface InterfaceDatabaseProxy {
     boolean updateGrade(Grade grade);                                                              //更新某个班级
     boolean updateExam(Exam exam);                                                                 //更新某个测试
 
-    boolean addCourse(Course course);                                                              //添加一个课程
+    boolean addCourse(int userID, Course course);                                                  //添加一个课程
     boolean addQuestionBank(int courseID, QuestionBank questionBank);                              //添加一个题库
     boolean addQuestion(int questionBankID, Question question);                                    //添加一个问题
     boolean addGrade(int userID, Grade grade);                                                     //添加一个班级
@@ -45,7 +45,6 @@ public interface InterfaceDatabaseProxy {
     boolean deleteQuestion(int questionID);                                                        //依据问题ID删除一个问题
     boolean deleteGrade(int gradeID);                                                              //依据班级ID删除一个班级
     boolean deleteExam(int examID);                                                                //依据测试ID删除一个测试
-    boolean deleteStudent(int userID);                                                             //依据用户ID删除一个用户
 
 
     ArrayList<Course> queryAllCourse();                                                            //查询系统中所有的课程
@@ -56,8 +55,10 @@ public interface InterfaceDatabaseProxy {
     ArrayList<Teacher> queryAllTeacher();                                                          //获取所有教师对象
     ArrayList<Student> queryAllStudent();                                                          //获取所有学生对象
 
-    boolean addStudent(int gradeID, Student student);                                              //添加一个学生
-    boolean addTeacher(int gradeID, Teacher teacher);                                              //添加一个教师
+    boolean addStudent(Student student);                                                           //添加一个学生
+    boolean addTeacher(Teacher teacher);                                                           //添加一个教师
 
     boolean updateUser(int userID, String password);                                               //更新用户信息
+
+    boolean deleteStudent(int userID);                                                             //依据用户ID删除一个用户
 }
