@@ -7,6 +7,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Online examination system" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="struts-1.2.x" />
+        </element>
       </element>
     </root>
   </artifact>

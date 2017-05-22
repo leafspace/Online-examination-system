@@ -1,225 +1,251 @@
 package cn.cslg.Online_examination_system.ToolBean;
 
-
 import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-20
+ * LastEdit: 2017-5-21
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
  */
 public class Teacher extends User {
-
-	/**
-	 * Default constructor
-	 */
-	public Teacher() {
-	}
-
-
-
-
-
-
-	/**
-	 * @param courseID 
-	 * @return
-	 */
-	public Course querryCourse(int courseID) {
-		// TODO implement here
-		return null;
+	public Teacher(int userID, int gradeID, String username, String password, String identity) {
+		super(userID, gradeID, username, password, identity);
 	}
 
 	/**
-	 * @return
+	 * @param courseID 课程ID
+	 * @return course 课程对象
+     * @function 依据课程ID查询课程对象
 	 */
-	public ArrayList<Course> querryAllCourse() {
-		// TODO implement here
-		return null;
+	public Course queryCourse(int courseID) {
+	    return this.interfaceDatabaseProxy.queryCourse(courseID);
 	}
 
 	/**
-	 * @param courseID 
-	 * @return
+	 * @return courseList 课程列表
+     * @funtion 查询本人所拥有的所有课程
+	 */
+	public ArrayList<Course> queryAllCourse() {
+		return this.interfaceDatabaseProxy.queryAllCourse(this.userID);
+	}
+
+	/**
+	 * @param courseID 课程ID
+	 * @return isSuccess 成功与否
+     * @function 依据课程ID删除课程
 	 */
 	public boolean deleteCourse(int courseID) {
-		// TODO implement here
-		return false;
+		return this.interfaceDatabaseProxy.deleteCourse(courseID);
 	}
 
 	/**
-	 * @param courseName 
-	 * @param courseInformation 
-	 * @return
+	 * @param courseName 课程名
+	 * @param courseInformation 课程信息
+	 * @return courseID 课程ID
+     * @function 依据课程信息添加一个课程
 	 */
 	public int addCourse(String courseName, String courseInformation) {
-		// TODO implement here
-		return 0;
+        boolean isSuccess = this.interfaceDatabaseProxy.addCourse(new Course(courseName, courseInformation));
+        if(isSuccess) {
+            Course course = this.interfaceDatabaseProxy.queryCourse(this.userID, courseName, courseInformation);
+            return course.getCourseID();
+        } else {
+            return -1;
+        }
 	}
 
 	/**
-	 * @param course 
-	 * @return
+	 * @param course 课程对象
+	 * @return isSuccess 成功与否
+     * @function 更新课程信息
 	 */
 	public boolean updateCourse(Course course) {
-		// TODO implement here
-		return false;
+		return this.interfaceDatabaseProxy.updateCourse(course);
 	}
 
 	/**
-	 * @param courseID 
-	 * @return
+	 * @param courseID 课程ID
+	 * @return question list 题目列表
+     * @function 查询某个课程下的所有题库
 	 */
-	public ArrayList<QuestionBank> querryAllQuestionBank(int courseID) {
-		// TODO implement here
-		return null;
+	public ArrayList<QuestionBank> queryAllQuestionBank(int courseID) {
+		return this.interfaceDatabaseProxy.queryAllQuestionBank(courseID);
 	}
 
 	/**
-	 * @param questionBankID 
-	 * @return
+	 * @param questionBankID 题库ID
+	 * @return isSuccess 成功与否
+     * @function 删除题库
 	 */
 	public boolean deleteQuestionBank(int questionBankID) {
-		// TODO implement here
-		return false;
+		return this.interfaceDatabaseProxy.deleteQuestion(questionBankID);
 	}
 
 	/**
-	 * @param questionName 
-	 * @return
+     * @param courseID 课程ID
+	 * @param questionBankName 题库名
+	 * @return isSuccess 成功与否
+     * @function 添加题库
 	 */
-	public int addQuestionBank(String questionName) {
-		// TODO implement here
-		return 0;
+	public int addQuestionBank(int courseID, String questionBankName) {
+        boolean isSuccess = this.interfaceDatabaseProxy.addQuestionBank(courseID, new QuestionBank(questionBankName));
+        if(isSuccess) {
+            QuestionBank questionBank = this.interfaceDatabaseProxy.queryQuestionBank(courseID, questionBankName);
+            return questionBank.getQuestionBankID();
+        } else {
+            return -1;
+        }
 	}
 
 	/**
-	 * @param questionName 
-	 * @param questionList 
-	 * @return
+	 * @param questionBankName 题库名
+	 * @param questionList 问题列表
+	 * @return questionBankID 题库ID
+     * @function 添加题库
 	 */
-	public int addQuestionBank(String questionName, ArrayList<Question> questionList) {
-		// TODO implement here
-		return 0;
+	public int addQuestionBank(int courseID, String questionBankName, ArrayList<Question> questionList) {
+		int questionBankID = this.addQuestionBank(courseID, questionBankName);
+		if(questionBankID >= 0) {
+		    for(int i = 0; i < questionList.size(); ++i) {
+                this.interfaceDatabaseProxy.addQuestion(questionBankID, questionList.get(i));
+            }
+        }
+        return questionBankID;
 	}
 
 	/**
-	 * @param questionBank 
-	 * @return
+	 * @param questionBank 题库对象
+	 * @return isSuccess 成功与否
+     * @function 更新题库
 	 */
 	public boolean updateQuestionBank(QuestionBank questionBank) {
-		// TODO implement here
-		return false;
+		return this.interfaceDatabaseProxy.updateQuestinBank(questionBank);
 	}
 
 	/**
-	 * @param question 
-	 * @return
+	 * @param question 问题对象
+	 * @return isSuccess 成功与否
+     * @function 更新问题
 	 */
 	public boolean updateQuestion(Question question) {
-		// TODO implement here
-		return false;
+		return this.interfaceDatabaseProxy.updateQuestion(question);
 	}
 
 	/**
-	 * @param questionID 
-	 * @return
+	 * @param questionID 问题ID
+	 * @return isSuccess 成功与否
+     * @function 删除问题
 	 */
 	public boolean deleteQuestion(int questionID) {
-		// TODO implement here
-		return false;
+		return this.interfaceDatabaseProxy.deleteQuestion(questionID);
 	}
 
 	/**
 	 * @param gradeID 
-	 * @return
+	 * @return grade 班级对象
+     * @function 依据班级ID获取班级对象
 	 */
-	public Grade querryGrade(int gradeID) {
-		// TODO implement here
-		return null;
+	public Grade queryGrade(int gradeID) {
+		return this.interfaceDatabaseProxy.queryGrade(gradeID);
 	}
 
 	/**
-	 * @return
+	 * @return gradeList 班级列表
+     * @function 获取本人所拥有的所有课程
 	 */
-	public ArrayList<Grade> querryAllGrade() {
-		// TODO implement here
-		return null;
+	public ArrayList<Grade> queryAllGrade() {
+		return this.interfaceDatabaseProxy.queryAllGrade(this.userID);
 	}
 
 	/**
-	 * @param gradeID 
-	 * @return
+	 * @param gradeID 班级ID
+	 * @return isSuccess 成功与否
+     * @function 删除班级
 	 */
 	public boolean deleteGrade(int gradeID) {
-		// TODO implement here
-		return false;
+		return this.interfaceDatabaseProxy.deleteGrade(gradeID);
 	}
 
 	/**
-	 * @param gradeName 
-	 * @return
+	 * @param gradeName 班级名
+	 * @return gradeID
+     * @function 添加班级
 	 */
 	public int addGrade(String gradeName) {
-		// TODO implement here
-		return 0;
+        boolean isSuccess = this.interfaceDatabaseProxy.addGrade(userID, new Grade(gradeName));
+        if(isSuccess) {
+            Grade grade = this.interfaceDatabaseProxy.queryGrade(userID, gradeName);
+            return grade.getGradeID();
+        } else {
+            return -1;
+        }
 	}
 
 	/**
-	 * @param gradeName 
-	 * @param studentList 
-	 * @return
+	 * @param gradeName 班级名
+	 * @param studentList 学生列表
+	 * @return gradeID 班级ID
+     * @function 添加一个班级
 	 */
-	public int addGrade(String gradeName, ArrayList<User> studentList) {
-		// TODO implement here
-		return 0;
+	public int addGrade(String gradeName, ArrayList<Student> studentList) {
+	    int gradeID = this.addGrade(gradeName);
+	    if(gradeID >= 0) {
+	        for(int i = 0; i < studentList.size(); ++i) {
+	            this.interfaceDatabaseProxy.addStudent(gradeID, studentList.get(i));
+            }
+        }
+		return gradeID;
 	}
 
 	/**
-	 * @param grade 
-	 * @return
+	 * @param grade 班级对象
+	 * @return isSuccess 成功与否
+     * @function 更新班级
 	 */
 	public boolean updateGrade(Grade grade) {
-		// TODO implement here
-		return false;
+		return this.interfaceDatabaseProxy.updateGrade(grade);
 	}
 
 	/**
-	 * @param username 
-	 * @param password 
-	 * @return
+     * @param userID 班级ID
+	 * @param password 密码
+	 * @return isSuccess 成功与否
+     * @function 更新学生信息
 	 */
-	public boolean updateStudent(String username, String password) {
-		// TODO implement here
-		return false;
+	public boolean updateStudent(int userID, String password) {
+		return this.interfaceDatabaseProxy.updateUser(userID, password);
 	}
 
 	/**
-	 * @return
+	 * @return examList 测试列表
+     * @function 查询教师拥有的所有测试
 	 */
-	public ArrayList<Exam> querryAllExam() {
-		// TODO implement here
-		return null;
+	public ArrayList<Exam> queryAllExam() {
+	    return this.interfaceDatabaseProxy.queryAllExam(this.userID);
 	}
 
 	/**
-	 * @param exam 
-	 * @return
+	 * @param exam 测试对象
+	 * @return examID 测试ID
+     * @function 添加一个测试
 	 */
-	public boolean addExam(Exam exam) {
-		// TODO implement here
-		return false;
+	public int addExam(Exam exam) {
+	    boolean isSuccess = this.interfaceDatabaseProxy.addExam(exam);
+	    if(isSuccess) {
+	        return this.interfaceDatabaseProxy.queryExam(exam).examID;
+        } else {
+	        return -1;
+        }
 	}
 
 	/**
-	 * @param examID 
-	 * @return
+	 * @param examID 测试ID
+	 * @return isSuccess 成功与否
+     * @function 删除测试
 	 */
 	public boolean deleteExam(int examID) {
-		// TODO implement here
-		return false;
+		return this.interfaceDatabaseProxy.deleteExam(examID);
 	}
-
 }

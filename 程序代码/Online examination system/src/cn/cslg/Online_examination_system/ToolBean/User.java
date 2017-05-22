@@ -1,121 +1,81 @@
 package cn.cslg.Online_examination_system.ToolBean;
 
+import cn.cslg.Online_examination_system.DatabaseFactory.DatabaseProxyFactory;
+import cn.cslg.Online_examination_system.DatabaseInterface.InterfaceDatabaseProxy;
+
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-20
+ * LastEdit: 2017-5-21
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
  */
-public class User {
-
-	/**
-	 * Default constructor
-	 */
-	public User() {
-	}
-
-	/**
-	 * 
-	 */
+public abstract class User {
 	protected int userID;
-
-	/**
-	 * 
-	 */
 	protected int gradeID;
-
-	/**
-	 * 
-	 */
 	protected String username;
-
-	/**
-	 * 
-	 */
 	protected String password;
-
-	/**
-	 * 
-	 */
 	protected String identity;
+    protected InterfaceDatabaseProxy interfaceDatabaseProxy = null;
 
-	/**
-	 * @param userID
-	 */
+    private User() {
+        this.interfaceDatabaseProxy = new DatabaseProxyFactory().getDatabaseProxy("MySQL");
+    }
+
+	public User(int userID, int gradeID, String username, String password, String identity) {
+        this();
+	    this.userID = userID;
+	    this.gradeID = gradeID;
+	    this.username = username;
+	    this.password = password;
+	    this.identity = identity;
+    }
+
 	public void setUserID(int userID) {
-		// TODO implement here
+		this.userID = userID;
 	}
 
-	/**
-	 * @param gradeID
-	 */
 	public void setGradeID(int gradeID) {
-		// TODO implement here
+		this.gradeID = gradeID;
 	}
-
-	/**
-	 * @return
-	 */
+	
 	public int getUserID() {
-		// TODO implement here
-		return 0;
+		return this.gradeID;
 	}
 
 	/**
-	 * @return
-	 */
+     * @return gradeName 用户当前所属用户组的名字
+     * @function
+     *      1.调用数据访问层方法获取gradeID所在的班级对象
+     *      2.依据班级对象返回班级名
+     * */
 	public String getGradeName() {
-		// TODO implement here
-		return "";
+        InterfaceDatabaseProxy interfaceDatabaseProxy = new DatabaseProxyFactory().getDatabaseProxy("MySQL");
+	    Grade grade = interfaceDatabaseProxy.queryGrade(this.gradeID);
+		return grade.getGradeName();
 	}
-
-	/**
-	 * @return
-	 */
+	
 	public String getUserName() {
-		// TODO implement here
-		return "";
+		return this.username;
 	}
-
-	/**
-	 * @return
-	 */
+	
 	public String getPassword() {
-		// TODO implement here
-		return "";
+		return this.password;
 	}
-
-	/**
-	 * @return
-	 */
+	
 	public String getIdentity() {
-		// TODO implement here
-		return "";
+		return this.identity;
 	}
-
-	/**
-	 * @return
-	 */
+	
 	public boolean isManager() {
-		// TODO implement here
-		return false;
+		return this.identity.equals("Manager");
 	}
-
-	/**
-	 * @return
-	 */
+	
 	public boolean isTeacher() {
-		// TODO implement here
-		return false;
+		return this.identity.equals("Teacher");
 	}
-
-	/**
-	 * @return
-	 */
+	
 	public boolean isStudent() {
-		// TODO implement here
-		return false;
+		return this.identity.equals("Student");
 	}
-
 }

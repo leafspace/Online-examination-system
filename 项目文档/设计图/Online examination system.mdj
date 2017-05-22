@@ -15561,7 +15561,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcI2uDZydN/3c="
 									},
-									"name": "querryCourse",
+									"name": "queryCourse",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
@@ -15611,7 +15611,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcI2uDZydN/3c="
 									},
-									"name": "querryAllCourse",
+									"name": "queryAllCourse",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
@@ -15805,7 +15805,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcI2uDZydN/3c="
 									},
-									"name": "querryAllQuestionBank",
+									"name": "queryAllQuestionBank",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
@@ -16160,7 +16160,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcI2uDZydN/3c="
 									},
-									"name": "querryGrade",
+									"name": "queryGrade",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
@@ -16210,7 +16210,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcI2uDZydN/3c="
 									},
-									"name": "querryAllGrade",
+									"name": "queryAllGrade",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
@@ -16516,7 +16516,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcI2uDZydN/3c="
 									},
-									"name": "querryAllExam",
+									"name": "queryAllExam",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
@@ -19384,7 +19384,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+querryCourse(courseID: int): Course",
+											"text": "+queryCourse(courseID: int): Course",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -19413,7 +19413,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+querryAllCourse(): ArrayList<Course>",
+											"text": "+queryAllCourse(): ArrayList<Course>",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -19529,7 +19529,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+querryAllQuestionBank(courseID: int): ArrayList<QuestionBank>",
+											"text": "+queryAllQuestionBank(courseID: int): ArrayList<QuestionBank>",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -19732,7 +19732,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+querryGrade(gradeID: int): Grade",
+											"text": "+queryGrade(gradeID: int): Grade",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -19761,7 +19761,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+querryAllGrade(): ArrayList<Grade>",
+											"text": "+queryAllGrade(): ArrayList<Grade>",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -19935,7 +19935,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+querryAllExam(): ArrayList<Exam>",
+											"text": "+queryAllExam(): ArrayList<Exam>",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -26332,9 +26332,6 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": {
-												"$ref": "AAAAAAFcJJSgsl3qa/k="
-											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -26350,9 +26347,6 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": {
-												"$ref": "AAAAAAFcJJSgsl3r+JQ="
-											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -26368,9 +26362,6 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": {
-												"$ref": "AAAAAAFcJJSgs13sWi4="
-											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -26417,9 +26408,6 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": {
-												"$ref": "AAAAAAFcJJSgs13tMr0="
-											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -26819,9 +26807,6 @@
 									"visibility": "private",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFcJJSgsV3lZfU="
-									},
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -26839,9 +26824,6 @@
 									"visibility": "private",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFcJJSguV3wRy8="
-									},
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -26886,9 +26868,6 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": {
-												"$ref": "AAAAAAFcJJSgsV3lZfU="
-											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -26982,9 +26961,6 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": {
-												"$ref": "AAAAAAFcJJSgsV3mnp4="
-											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -27585,7 +27561,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+doFilter(request: ServletRequest, response: ServletResponse, chain: FilterChain): void",
+											"text": "+doFilter(request, response, chain): void",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -27614,7 +27590,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+init(arg0: FilterConfig): void",
+											"text": "+init(arg0): void",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -28721,7 +28697,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-connection: Connection",
+											"text": "-connection",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -28750,7 +28726,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-preparedStatement: PreparedStatement",
+											"text": "-preparedStatement",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -28834,7 +28810,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+getConnection(): Connection",
+											"text": "+getConnection(): null",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -28892,7 +28868,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+query(sql: String): ResultSet",
+											"text": "+query(sql: String): null",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false

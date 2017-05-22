@@ -11,7 +11,6 @@ import java.sql.Connection;
  *     E-mail: 18852923073@163.com
  */
 public interface InterfaceDatabaseConnection {
-    Connection getConnection();
     void allClose();
 
     void update(String sql);

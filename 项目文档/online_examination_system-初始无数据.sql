@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2017-05-19 15:24:52
+Date: 2017-05-21 16:53:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -107,6 +107,7 @@ DROP TABLE IF EXISTS `question`;
 CREATE TABLE `question` (
   `questionID` int(11) NOT NULL AUTO_INCREMENT,
   `questionBankID` int(11) NOT NULL,
+  `questionType` varchar(255) NOT NULL,
   `question` varchar(255) NOT NULL,
   `A` varchar(255) DEFAULT NULL,
   `B` varchar(255) DEFAULT NULL,
@@ -160,5 +161,5 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '1', 'administrator', 'admin', 'manager');
-INSERT INTO `user` VALUES ('2', '2', 'teacher', '123456', 'teacher');
+INSERT INTO `user` VALUES ('1', '1', 'administrator', 'admin', 'Manager');
+INSERT INTO `user` VALUES ('2', '2', 'teacher', '123456', 'Teacher');

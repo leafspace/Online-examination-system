@@ -23,7 +23,7 @@ public class MySqlDatabaseConnection implements InterfaceDatabaseConnection {
 		this.getConnection();
 	}
 
-	public Connection getConnection() {
+	private Connection getConnection() {
 		try {
 			String url = "jdbc:mysql://192.168.198.129:3306/" + dbName + "?useUnicode=true&characterEncoding=utf8&user=" + userName + "&password=" + userPassword;
 			Class.forName(driverName);                                                             //加载数据库驱动程序类

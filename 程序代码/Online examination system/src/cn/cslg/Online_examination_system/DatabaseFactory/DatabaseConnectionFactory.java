@@ -18,7 +18,6 @@ public class DatabaseConnectionFactory {
 	 * @function 初始化属性
 	 */
 	public DatabaseConnectionFactory() {
-		// TODO implement here
 		this.databaseConnection = null;
 	}
 

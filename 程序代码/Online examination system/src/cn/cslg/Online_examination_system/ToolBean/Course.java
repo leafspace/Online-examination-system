@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-20
+ * LastEdit: 2017-5-21
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -16,6 +16,16 @@ public class Course {
 	private int courseID;
 	private String courseName;
 	private String courseInformation;
+
+	/**
+	 * @funciton 非全参构造方法
+	 * 		用于在用户添加课程时构造一个课程对象
+	 * */
+	public Course(String courseName, String courseInformation) {
+	    this.courseID = -1;
+		this.courseName = courseName;
+		this.courseInformation = courseInformation;
+	}
 
 	public Course(int courseID, String courseName, String courseInformation) {
 	    this.courseID = courseID;
