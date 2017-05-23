@@ -10,6 +10,12 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="struts-1.2.x" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.18-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/JavaMail/dsn.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/JavaMail/imap.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/JavaMail/mail.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/JavaMail/pop3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/JavaMail/smtp.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/JavaMail/mailapi.jar" />
         </element>
       </element>
     </root>

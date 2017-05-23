@@ -8,6 +8,7 @@
     <form-beans>
         <form-bean name="loginActionForm" type="cn.cslg.Online_examination_system.ActionForm.LoginActionForm" />
         <form-bean name="resetActionForm" type="cn.cslg.Online_examination_system.ActionForm.ResetActionForm" />
+        <form-bean name="sendActionForm" type="cn.cslg.Online_examination_system.ActionForm.SendEmailActionForm" />
     </form-beans>
 
     <action-mappings>
@@ -18,6 +19,9 @@
             <forward name="error" path="/index.jsp" />
         </action>
         <action path="/reset" type="cn.cslg.Online_examination_system.Action.ResetAction" name="resetActionForm" scope="request">
+            <forward name="loginIndex" path="/index.jsp" />
+        </action>
+        <action path="/sendEmail" type="cn.cslg.Online_examination_system.Action.SendEmailAction" name="sendActionForm" scope="request">
             <forward name="loginIndex" path="/index.jsp" />
         </action>
     </action-mappings>

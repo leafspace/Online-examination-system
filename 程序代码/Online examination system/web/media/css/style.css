@@ -2783,7 +2783,7 @@ Custom tabs
 }
     
 .tabs-left.tabbable-custom .nav-tabs > li { 
-  margin-right: 0; border-left: 2px solid transparent; margin-top: none; 
+  margin-right: 0; border-left: 2px solid transparent; margin-top: none;
 }
 
 .tabs-left.tabbable-custom .nav-tabs > li.active { 

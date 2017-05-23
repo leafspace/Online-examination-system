@@ -90,14 +90,14 @@
 				</div>
 			</form>
 
-			<form class="form-vertical forget-form" action="reset.do" method="post">
+			<form class="form-vertical forget-form" action="/sendEmail.do" method="post">
 				<h3 class="">忘记密码 ?</h3>
-				<p>输入你的学号来重置密码.</p>
+				<p>输入你的校园邮箱来重置密码.</p>
 				<div class="control-group">
 					<div class="controls">
 						<div class="input-icon left">
 							<i class="icon-envelope"></i>
-							<input class="m-wrap placeholder-no-fix" type="text" placeholder="" name="username" />
+							<input class="m-wrap placeholder-no-fix" type="text" placeholder="test@example.com" name="eMail" />
 						</div>
 					</div>
 				</div>

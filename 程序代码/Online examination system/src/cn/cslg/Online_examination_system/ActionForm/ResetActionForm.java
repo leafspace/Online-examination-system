@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
  */
-public class ResetActionForm  extends ActionForm {
+public class ResetActionForm extends ActionForm {
     private String username;
 
     public String getUsername() {
