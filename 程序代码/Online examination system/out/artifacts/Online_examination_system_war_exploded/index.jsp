@@ -21,7 +21,7 @@
 		<link href="media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 
 		<link href="media/css/login-soft.css" rel="stylesheet" type="text/css"/>
-		<link rel="shortcut icon" href="media/image/favicon.ico" />
+		<link rel="shortcut icon" href="media/image/laboratory.ico" />
 	</head>
 
 	<body class="login">

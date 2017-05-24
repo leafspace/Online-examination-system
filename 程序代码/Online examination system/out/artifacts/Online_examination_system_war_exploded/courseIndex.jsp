@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="cn.cslg.Online_examination_system.ToolBean.Teacher" %>
+<%@ page import="cn.cslg.Online_examination_system.ToolBean.Course" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8" />
 		<title>在线考试系统 | 教师管理页 - 课程管理</title>
@@ -20,6 +31,13 @@
 		<link rel="shortcut icon" href="media/image/laboratory.ico" />
 	</head>
 
+    <%
+        Teacher teacher = (Teacher) request.getSession().getAttribute("user");
+        ArrayList<Course> courses = (ArrayList<Course>) request.getAttribute("courses");
+        pageContext.setAttribute("teacher", teacher);
+        pageContext.setAttribute("courses", courses);
+    %>
+
 	<body class="page-header-fixed">
 		<div class="header navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
@@ -34,7 +52,7 @@
 						<li class="dropdown user">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<img alt="" src="media/image/avatar1_small.jpg" />
-							<span class="username">username</span>
+							<span class="username"><%=teacher.getUserName()%></span>
 							<i class="icon-angle-down"></i>
 							</a>
 
@@ -61,10 +79,8 @@
 							<div class="input-box">
 								<a href="javascript:;" class="remove"></a>
 								<input type="text" placeholder="搜索..." />
-								<input type="button" class="submit" value=" " />
-
+								<input type="button" class="submit" />
 							</div>
-
 						</form>
 					</li>
 
@@ -84,7 +100,7 @@
 
 						<ul class="sub-menu">
 
-							<li>
+							<li class="active">
 								<a href="javascript:;">
 									课程管理
 									<span class="arrow"></span>
@@ -220,155 +236,53 @@
 								</div>
 
 								<div class="portlet-body">
-									<div class="row-fluid">
-										<div class="span3">
-											<div class="item">
-												<div class="zoom">
-													<div class="classbackground">
-														<div class="textshow">
-															<h3>马克思主义理论</h3>
-														</div>
-													</div>
-												</div>
+                                    <div class="row-fluid">
 
-												<div class="details">
-													<a href="#" class="icon"><i class="icon-link"></i></a>
-													<a href="#" class="icon"><i class="icon-pencil"></i></a>
-													<a href="#" class="icon"><i class="icon-remove"></i></a>
-												</div>
-											</div>
-										</div>
+                                            <div class="clearfix space5"></div>
+                                            <a href="courseInformation.jsp?type=add" class="btn pull-right green"><i class="icon-plus"></i> 添加课程</a>
 
-										<div class="span3">
-											<div class="item">
-												<div class="zoom">
-													<div class="classbackground">
-														<div class="textshow">
-															<h3>毛泽东思想与社会主义特色理论体系</h3>
-														</div>
-													</div>
-												</div>
+                                    </div>
+                                    <hr class="clearfix" />
+                                    <%
+                                        for(int i = 0; i <= courses.size() / 4; ++i) {
+                                    %>
 
-												<div class="details">
-													<a href="#" class="icon"><i class="icon-link"></i></a>
-													<a href="#" class="icon"><i class="icon-pencil"></i></a>
-													<a href="#" class="icon"><i class="icon-remove"></i></a>
-												</div>
-											</div>
-										</div>
+                                            <div class="row-fluid">
+                                                <%
+                                                    int max;
+                                                    if(i == courses.size() / 4) {
+                                                        max = courses.size() % 4;
+                                                    } else {
+                                                        max = 4;
+                                                    }
+                                                    for(int j = 0; j < max; ++j) {
+                                                        Course course = courses.get(i*4+j);
+                                                %>
+                                                        <div class="span3">
+                                                            <div class="item">
+                                                                <div class="zoom">
+                                                                    <div class="classbackground" onclick="window.location.href='ShowQuestionBankAction.do?courseID=<%=course.getCourseID()%>'" >
+                                                                        <div class="textshow">
+                                                                            <h3><%=course.getCourseName()%></h3>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 
-										<div class="span3">
-											<div class="item">
-												<div class="zoom">
-													<div class="classbackground">
-														<div class="textshow">
-															<h3>毛泽东思想与社会主义特色理论体系</h3>
-														</div>
-													</div>
-												</div>
+                                                                <div class="details">
+                                                                    <a href="courseInformation.jsp?type=update&courseID=<%=course.getCourseID()%>" class="icon"><i class="icon-pencil"></i></a>
+                                                                    <a href="deleteCourse.do?courseID=<%=course.getCourseID()%>" class="icon"><i class="icon-remove"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                <%
+                                                    }
 
-												<div class="details">
-													<a href="#" class="icon"><i class="icon-link"></i></a>
-													<a href="#" class="icon"><i class="icon-pencil"></i></a>
-													<a href="#" class="icon"><i class="icon-remove"></i></a>
-												</div>
-											</div>
-										</div>
+                                                %>
+                                            </div>
 
-										<div class="span3">
-											<div class="item">
-												<div class="zoom">
-													<div class="classbackground">
-														<div class="textshow">
-															<h3>毛泽东思想与社会主义特色理论体系</h3>
-														</div>
-													</div>
-												</div>
-
-												<div class="details">
-													<a href="#" class="icon"><i class="icon-link"></i></a>
-													<a href="#" class="icon"><i class="icon-pencil"></i></a>
-													<a href="#" class="icon"><i class="icon-remove"></i></a>
-												</div>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="row-fluid">
-										<div class="span3">
-											<div class="item">
-												<div class="zoom">
-													<div class="classbackground">
-														<div class="textshow">
-															<h3>毛泽东思想与社会主义特色理论体系</h3>
-														</div>
-													</div>
-												</div>
-
-												<div class="details">
-													<a href="#" class="icon"><i class="icon-link"></i></a>
-													<a href="#" class="icon"><i class="icon-pencil"></i></a>
-													<a href="#" class="icon"><i class="icon-remove"></i></a>
-												</div>
-											</div>
-										</div>
-
-										<div class="span3">
-											<div class="item">
-												<div class="zoom">
-													<div class="classbackground">
-														<div class="textshow">
-															<h3>毛泽东思想与社会主义特色理论体系</h3>
-														</div>
-													</div>
-												</div>
-
-												<div class="details">
-													<a href="#" class="icon"><i class="icon-link"></i></a>
-													<a href="#" class="icon"><i class="icon-pencil"></i></a>
-													<a href="#" class="icon"><i class="icon-remove"></i></a>
-												</div>
-											</div>
-										</div>
-
-										<div class="span3">
-											<div class="item">
-												<div class="zoom">
-													<div class="classbackground">
-														<div class="textshow">
-															<h3>毛泽东思想与社会主义特色理论体系</h3>
-														</div>
-													</div>
-												</div>
-
-												<div class="details">
-													<a href="#" class="icon"><i class="icon-link"></i></a>
-													<a href="#" class="icon"><i class="icon-pencil"></i></a>
-													<a href="#" class="icon"><i class="icon-remove"></i></a>
-												</div>
-											</div>
-										</div>
-
-										<div class="span3">
-											<div class="item">
-												<div class="zoom">
-													<div class="classbackground">
-														<div class="textshow">
-															<h3>毛泽东思想与社会主义特色理论体系</h3>
-														</div>
-													</div>
-												</div>
-
-												<div class="details">
-													<a href="#" class="icon"><i class="icon-link"></i></a>
-													<a href="#" class="icon"><i class="icon-pencil"></i></a>
-													<a href="#" class="icon"><i class="icon-remove"></i></a>
-												</div>
-											</div>
-										</div>
-
-									</div>
+                                    <%
+                                        }
+                                    %>
 								</div>
 							</div>
 						</div>

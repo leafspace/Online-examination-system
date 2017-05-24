@@ -9,12 +9,16 @@
         <form-bean name="loginActionForm" type="cn.cslg.Online_examination_system.ActionForm.LoginActionForm" />
         <form-bean name="resetActionForm" type="cn.cslg.Online_examination_system.ActionForm.ResetActionForm" />
         <form-bean name="sendActionForm" type="cn.cslg.Online_examination_system.ActionForm.SendEmailActionForm" />
+        <form-bean name="addCourseActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.CourseManage.AddCourseActionForm" />
+        <form-bean name="showCourseActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.CourseManage.ShowCourseActionForm" />
+        <form-bean name="deleteCourseActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.CourseManage.DeleteCourseActionForm" />
+        <form-bean name="updateCourseActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.CourseManage.UpdateCourseActionForm" />
     </form-beans>
 
     <action-mappings>
         <action path="/login" type="cn.cslg.Online_examination_system.Action.LoginAction" name="loginActionForm" scope="request">
             <forward name="managerIndex" path="/managerIndex.jsp" />
-            <forward name="teacherIndex" path="/teacherIndex.jsp" />
+            <forward name="teacherIndex" path="/showCourse.do" />
             <forward name="studentIndex" path="/studentIndex.jsp" />
             <forward name="error" path="/index.jsp" />
         </action>
@@ -23,6 +27,20 @@
         </action>
         <action path="/sendEmail" type="cn.cslg.Online_examination_system.Action.SendEmailAction" name="sendActionForm" scope="request">
             <forward name="loginIndex" path="/index.jsp" />
+        </action>
+        <action path="/showCourse" type="cn.cslg.Online_examination_system.Action.Teacher.CourseManage.ShowCourseAction" name="showCourseActionForm" scope="request">
+            <forward name="courseIndex" path="/courseIndex.jsp" />
+        </action>
+        <action path="/deleteCourse" type="cn.cslg.Online_examination_system.Action.Teacher.CourseManage.DeleteCourseAction" name="deleteCourseActionForm" scope="request">
+            <forward name="courseIndex" path="/showCourse.do" />
+        </action>
+        <action path="/addCourse" type="cn.cslg.Online_examination_system.Action.Teacher.CourseManage.AddCourseAction" name="addCourseActionForm" scope="request">
+            <forward name="courseIndex" path="/showCourse.do" />
+            <forward name="error" path="/courseInformation.jsp?type=error" />
+        </action>
+        <action path="/updateCourse" type="cn.cslg.Online_examination_system.Action.Teacher.CourseManage.UpdateCourseAction" name="updateCourseActionForm" scope="request">
+            <forward name="courseIndex" path="/showCourse.do" />
+            <forward name="error" path="/courseInformation.jsp?type=error" />
         </action>
     </action-mappings>
 </struts-config>

@@ -39,7 +39,7 @@ public class LoginAction extends Action {
             int userID;
             if((userID = interfaceDatabaseProxy.checkUser(loginActionForm.getUsername(), loginActionForm.getPassword())) != -1) {//检查用户名密码是否正确
                 User user = interfaceDatabaseProxy.queryIdentity(userID);
-                request.setAttribute("user", user);                                                //保存到作用域内，提供后面的页面使用
+                request.getSession().setAttribute("user", user);                                   //保存到作用域内，提供后面的页面使用
                 if(user.isManager()) {
                     return mapping.findForward("managerIndex");
                 } else if(user.isStudent()) {
