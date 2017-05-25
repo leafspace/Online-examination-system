@@ -49,5 +49,15 @@
         <jarDirectory url="file://$MODULE_DIR$/lib/JavaMail" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/lib/Apache POI" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/lib/Apache POI" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -232,7 +232,7 @@
 
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="portlet_tab1">
-                                            <form class="form-horizontal" action="<%if(type.equals("add")){%>addQuestionBank.do<%}else{%>updateQuestionBank.do<%}%>" method="post">
+                                            <form class="form-horizontal" action="<%if(type.equals("add")){%>uploadQuestionBank.do<%}else{%>updateQuestionBank.do<%}%>" method="post" enctype="multipart/form-data">
                                                 <input type="hidden" name="type" value="<%=type%>">
                                                 <input type="hidden" name="questionBankID" value="<%if(type.equals("edit"))%><%=questionBank.getQuestionBankID()%>" >
                                                 <div class="control-group">
@@ -245,7 +245,7 @@
                                                             </logic:notEmpty>
                                                         </span>
 
-                                                        <input type="file" id="file" style="visibility: hidden;" />
+                                                        <input type="file" id="file" name="uploadFile" style="visibility: hidden;" />
                                                         <input type="submit" id="submit" style="visibility: hidden;">
                                                         <span class="btn green fileinput-button" value="submit" onclick="uploadFile()">
                                                             <i class="icon-plus icon-white"></i>

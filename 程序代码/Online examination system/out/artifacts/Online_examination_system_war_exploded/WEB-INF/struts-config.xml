@@ -19,6 +19,7 @@
         <form-bean name="showQuestionBankInformationActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.ShowQuestionBankInformationActionForm" />
         <form-bean name="deleteQuestionBankActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.DeleteQuestionBankActionForm" />
         <form-bean name="updateQuestionBankActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.UpdateQuestionBankActionForm" />
+        <form-bean name="uploadQuestionBankActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.UploadQuestionBankActionForm" />
 
         <form-bean name="showQuestionActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.QuestionManage.ShowQuestionActionForm" />
         <form-bean name="deleteQuestionActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.QuestionManage.DeleteQuestionActionForm" />
@@ -67,6 +68,10 @@
         <action path="/updateQuestionBank" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.UpdateQuestionBankAction" name="updateQuestionBankActionForm" scope="request">
             <forward name="questionBankIndex" path="/showQuestionBank.do" />
             <forward name="error" path="/editQuestionBankInformation.jsp" />
+        </action>
+        <action path="/uploadQuestionBank" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.UploadQuestionBankAction" name="uploadQuestionBankActionForm" scope="request">
+            <forward name="success" path="/teacherIndex.jsp" />
+            <forward name="failed" path="/studentIndex.jsp" />
         </action>
 
 
