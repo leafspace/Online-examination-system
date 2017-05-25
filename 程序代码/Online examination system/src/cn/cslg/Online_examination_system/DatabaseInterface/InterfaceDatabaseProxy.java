@@ -43,6 +43,7 @@ public interface InterfaceDatabaseProxy {
     boolean deleteCourse(int courseID);                                                            //依据课程ID删除一个课程
     boolean deleteQuestionBank(int questionBankID);                                                //依据题库ID删除一个题库
     boolean deleteQuestion(int questionID);                                                        //依据问题ID删除一个问题
+    boolean deleteAllQuestion(int questionBankID);                                                 //依据题库ID删除所有问题
     boolean deleteGrade(int gradeID);                                                              //依据班级ID删除一个班级
     boolean deleteExam(int examID);                                                                //依据测试ID删除一个测试
 
@@ -70,4 +71,7 @@ public interface InterfaceDatabaseProxy {
     User queryIdentity(int userID);                                                                //依据用户ID查询用户对象
 
     boolean resetUser(String username);                                                            //只知道用户名的情况下重置用户
+
+    int queryQuestionBankCourseID(int questionBankID);                                             //通过题库ID查找对应课程ID
+    int queryQuestionQuestionBankID(int questionID);                                               //通过题目ID查找对应题库ID
 }

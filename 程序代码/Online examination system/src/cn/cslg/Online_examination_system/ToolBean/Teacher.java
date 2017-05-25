@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-22
+ * LastEdit: 2017-5-25
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -66,6 +66,15 @@ public class Teacher extends User {
 	}
 
 	/**
+	 * @param questionBankID 题库ID
+	 * @return questionBank 题库对象
+	 * @function 查询出题库对象
+	 */
+	public QuestionBank queryQuestionBank(int questionBankID) {
+		return this.interfaceDatabaseProxy.queryQuestionBank(questionBankID);
+	}
+
+	/**
 	 * @param courseID 课程ID
 	 * @return question list 题目列表
      * @function 查询某个课程下的所有题库
@@ -80,7 +89,12 @@ public class Teacher extends User {
      * @function 删除题库
 	 */
 	public boolean deleteQuestionBank(int questionBankID) {
-		return this.interfaceDatabaseProxy.deleteQuestion(questionBankID);
+		boolean isSuccess = this.interfaceDatabaseProxy.deleteAllQuestion(questionBankID);
+		if(!isSuccess) {
+			return isSuccess;
+		}
+		isSuccess = this.interfaceDatabaseProxy.deleteQuestionBank(questionBankID);
+		return isSuccess;
 	}
 
 	/**
@@ -122,6 +136,19 @@ public class Teacher extends User {
 	 */
 	public boolean updateQuestionBank(QuestionBank questionBank) {
 		return this.interfaceDatabaseProxy.updateQuestinBank(questionBank);
+	}
+
+	public Question queryQuestion(int questionID) {
+		return this.interfaceDatabaseProxy.queryQuestion(questionID);
+	}
+
+	/**
+	 * @param questionBankID 题库ID
+	 * @return questionList 问题列表
+	 * @function 查询所有的问题
+	 */
+	public ArrayList<Question> queryAllQuestion(int questionBankID) {
+		return this.interfaceDatabaseProxy.queryAllQuestion(questionBankID);
 	}
 
 	/**
@@ -249,4 +276,12 @@ public class Teacher extends User {
 	public boolean deleteExam(int examID) {
 		return this.interfaceDatabaseProxy.deleteExam(examID);
 	}
+
+	public int queryQuestionBankCourseID(int questionBankID) {
+	    return this.interfaceDatabaseProxy.queryQuestionBankCourseID(questionBankID);
+    }
+
+    public int queryQuestionQuestionBankID(int questionID) {
+        return this.interfaceDatabaseProxy.queryQuestionQuestionBankID(questionID);
+    }
 }

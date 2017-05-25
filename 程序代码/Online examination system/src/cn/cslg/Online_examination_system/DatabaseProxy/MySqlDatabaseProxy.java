@@ -307,8 +307,8 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
     }
 
     public boolean updateQuestion(Question question) {
-        String sqlStr = "UPDATE question SET question = '" + question.question + "', A = '" + question.A
-                + "', B = '" + question.B + "', C = '" + question.C + "', D = '" + question.D + "', E = '"
+        String sqlStr = "UPDATE question SET question = '" + question.question + "', questionType='" + question.getQuestionType()
+                + "',A = '" + question.A + "', B = '" + question.B + "', C = '" + question.C + "', D = '" + question.D + "', E = '"
                 + question.E + "', answer = '" + question.answer + "' WHERE questionID = " + question.getQuestionID() + ";";
         int resultNumber = this.databaseConnection.update(sqlStr);
         if(resultNumber != 1) {
@@ -435,6 +435,15 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
             return false;
         }
         return true;
+    }
+
+    public boolean deleteAllQuestion(int questionBankID) {
+        boolean isSuccess = true;
+        ArrayList<Question> questions = this.queryAllQuestion(questionBankID);
+        for(Question i : questions) {
+            isSuccess = isSuccess & this.deleteQuestion(i.getQuestionID());
+        }
+        return isSuccess;
     }
 
     public boolean deleteGrade(int gradeID) {
@@ -727,5 +736,30 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
             return false;
         }
         return true;
+    }
+
+    private int getResultSetID(ResultSet resultSet) {
+        try {
+            if(resultSet.next()) {
+                return Integer.parseInt(resultSet.getString(1));
+            } else {
+                return -1;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public int queryQuestionBankCourseID(int questionBankID) {
+        String sqlStr = "SELECT courseID FROM questionbank WHERE questionBankID = " + questionBankID + ";";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        return this.getResultSetID(resultSet);
+    }
+
+    public int queryQuestionQuestionBankID(int questionID) {
+        String sqlStr = "SELECT questionBankID FROM question WHERE questionID = " + questionID + ";";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        return this.getResultSetID(resultSet);
     }
 }

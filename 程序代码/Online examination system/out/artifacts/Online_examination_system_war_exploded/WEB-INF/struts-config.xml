@@ -9,10 +9,20 @@
         <form-bean name="loginActionForm" type="cn.cslg.Online_examination_system.ActionForm.LoginActionForm" />
         <form-bean name="resetActionForm" type="cn.cslg.Online_examination_system.ActionForm.ResetActionForm" />
         <form-bean name="sendActionForm" type="cn.cslg.Online_examination_system.ActionForm.SendEmailActionForm" />
+
         <form-bean name="addCourseActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.CourseManage.AddCourseActionForm" />
         <form-bean name="showCourseActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.CourseManage.ShowCourseActionForm" />
         <form-bean name="deleteCourseActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.CourseManage.DeleteCourseActionForm" />
         <form-bean name="updateCourseActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.CourseManage.UpdateCourseActionForm" />
+
+        <form-bean name="showQuestionBankActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.ShowQuestionBankActionForm" />
+        <form-bean name="showQuestionBankInformationActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.ShowQuestionBankInformationActionForm" />
+        <form-bean name="deleteQuestionBankActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.DeleteQuestionBankActionForm" />
+        <form-bean name="updateQuestionBankActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.UpdateQuestionBankActionForm" />
+
+        <form-bean name="showQuestionActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.QuestionManage.ShowQuestionActionForm" />
+        <form-bean name="deleteQuestionActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.QuestionManage.DeleteQuestionActionForm" />
+        <form-bean name="updateQuestionActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.QuestionManage.UpdateQuestionActionForm" />
     </form-beans>
 
     <action-mappings>
@@ -28,6 +38,7 @@
         <action path="/sendEmail" type="cn.cslg.Online_examination_system.Action.SendEmailAction" name="sendActionForm" scope="request">
             <forward name="loginIndex" path="/index.jsp" />
         </action>
+
         <action path="/showCourse" type="cn.cslg.Online_examination_system.Action.Teacher.CourseManage.ShowCourseAction" name="showCourseActionForm" scope="request">
             <forward name="courseIndex" path="/courseIndex.jsp" />
         </action>
@@ -41,6 +52,32 @@
         <action path="/updateCourse" type="cn.cslg.Online_examination_system.Action.Teacher.CourseManage.UpdateCourseAction" name="updateCourseActionForm" scope="request">
             <forward name="courseIndex" path="/showCourse.do" />
             <forward name="error" path="/courseInformation.jsp?type=error" />
+        </action>
+
+        <action path="/showQuestionBank" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.ShowQuestionBankAction" name="showQuestionBankActionForm" scope="request">
+            <forward name="questionBankIndex" path="/questionBankIndex.jsp" />
+        </action>
+        <action path="/showQuestionBankInformation" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.ShowQuestionBankInformationAction" name="showQuestionBankInformationActionForm" scope="request">
+            <forward name="questionBankInformation" path="/questionBankInformation.jsp" />
+            <forward name="editQuestionBankInformation" path="/editQuestionBankInformation.jsp" />
+        </action>
+        <action path="/deleteQuestionBank" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.DeleteQuestionBankAction" name="deleteQuestionBankActionForm" scope="request">
+            <forward name="questionBankIndex" path="/showQuestionBank.do" />
+        </action>
+        <action path="/updateQuestionBank" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.UpdateQuestionBankAction" name="updateQuestionBankActionForm" scope="request">
+            <forward name="questionBankIndex" path="/showQuestionBank.do" />
+            <forward name="error" path="/editQuestionBankInformation.jsp" />
+        </action>
+
+
+        <action path="/showQuestion" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.QuestionManage.ShowQuestionAction" name="showQuestionActionForm" scope="request">
+            <forward name="questionInformation" path="/editQuestion.jsp" />
+        </action>
+        <action path="/deleteQuestion" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.QuestionManage.DeleteQuestionAction" name="deleteQuestionActionForm" scope="request">
+            <forward name="questionBankInformation" path="/editQuestionBankInformation.jsp" />
+        </action>
+        <action path="/updateQuestion" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.QuestionManage.UpdateQuestionAction" name="updateQuestionActionForm" scope="request">
+            <forward name="questionBankInformation" path="/editQuestionBankInformation.jsp" />
         </action>
     </action-mappings>
 </struts-config>

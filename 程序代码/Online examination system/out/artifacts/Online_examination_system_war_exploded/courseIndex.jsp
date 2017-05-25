@@ -261,7 +261,7 @@
                                                         <div class="span3">
                                                             <div class="item">
                                                                 <div class="zoom">
-                                                                    <div class="classbackground" onclick="window.location.href='ShowQuestionBankAction.do?courseID=<%=course.getCourseID()%>'" >
+                                                                    <div class="classbackground" onclick="window.location.href='showQuestionBank.do?courseID=<%=course.getCourseID()%>'" >
                                                                         <div class="textshow">
                                                                             <h3><%=course.getCourseName()%></h3>
                                                                         </div>
