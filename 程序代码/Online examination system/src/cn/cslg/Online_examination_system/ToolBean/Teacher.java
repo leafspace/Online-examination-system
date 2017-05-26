@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-25
+ * LastEdit: 2017-5-26
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -196,6 +196,10 @@ public class Teacher extends User {
      * @function 删除班级
 	 */
 	public boolean deleteGrade(int gradeID) {
+		boolean isSuccess = this.interfaceDatabaseProxy.deleteAllStudent(gradeID);
+		if(!isSuccess) {
+		    return false;
+        }
 		return this.interfaceDatabaseProxy.deleteGrade(gradeID);
 	}
 
@@ -240,6 +244,14 @@ public class Teacher extends User {
 		return this.interfaceDatabaseProxy.updateGrade(grade);
 	}
 
+    public Student queryStudent(int userID) {
+        return this.interfaceDatabaseProxy.queryStudent(userID);
+    }
+
+	public ArrayList<Student> queryAllStudent(int gradeID) {
+	    return this.interfaceDatabaseProxy.queryAllStudent(gradeID);
+    }
+
 	/**
      * @param userID 班级ID
 	 * @param password 密码
@@ -249,6 +261,10 @@ public class Teacher extends User {
 	public boolean updateStudent(int userID, String password) {
 		return this.interfaceDatabaseProxy.updateUser(userID, password);
 	}
+
+	public boolean deleteStudent(int userID) {
+	    return this.interfaceDatabaseProxy.deleteStudent(userID);
+    }
 
 	/**
 	 * @return examList 测试列表

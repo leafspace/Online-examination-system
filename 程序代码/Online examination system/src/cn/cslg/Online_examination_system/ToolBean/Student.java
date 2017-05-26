@@ -10,10 +10,12 @@ import java.util.ArrayList;
  *     E-mail: 18852923073@163.com
  */
 public class Student extends User {
+	public Student(String username, String password, String identity) {
+		super(username, password, identity);
+	}
+
 	public Student(int userID, int gradeID, String username, String password, String identity) {
 		super(userID, gradeID, username, password, identity);
-
-
 	}
 
 	/**

@@ -247,7 +247,6 @@
                                                         </span>
 
                                                         <input type="file" id="file" name="uploadFile" style="visibility: hidden;" />
-                                                        <input type="submit" id="submit" style="visibility: hidden;">
                                                         <span class="btn green fileinput-button" value="submit" onclick="uploadFile()">
                                                             <i class="icon-plus icon-white"></i>
                                                             <span>上传题目</span>

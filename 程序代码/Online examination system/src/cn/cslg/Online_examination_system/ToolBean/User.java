@@ -5,7 +5,7 @@ import cn.cslg.Online_examination_system.DatabaseInterface.InterfaceDatabaseProx
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-22
+ * LastEdit: 2017-5-26
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -21,6 +21,13 @@ public abstract class User {
     private User() {
         this.interfaceDatabaseProxy = new DatabaseProxyFactory().getDatabaseProxy("MySQL");
     }
+
+	public User(String username, String password, String identity) {
+		this();
+		this.username = username;
+		this.password = password;
+		this.identity = identity;
+	}
 
 	public User(int userID, int gradeID, String username, String password, String identity) {
         this();
@@ -40,7 +47,7 @@ public abstract class User {
 	}
 	
 	public int getUserID() {
-		return this.gradeID;
+		return this.userID;
 	}
 
 	/**

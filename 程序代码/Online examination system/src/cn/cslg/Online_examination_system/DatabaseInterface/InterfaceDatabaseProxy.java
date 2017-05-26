@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-22
+ * LastEdit: 2017-5-26
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -45,6 +45,7 @@ public interface InterfaceDatabaseProxy {
     boolean deleteQuestion(int questionID);                                                        //依据问题ID删除一个问题
     boolean deleteAllQuestion(int questionBankID);                                                 //依据题库ID删除所有问题
     boolean deleteGrade(int gradeID);                                                              //依据班级ID删除一个班级
+    boolean deleteAllStudent(int gradeID);                                                         //依据班级ID删除所有学生
     boolean deleteExam(int examID);                                                                //依据测试ID删除一个测试
 
 
@@ -64,6 +65,7 @@ public interface InterfaceDatabaseProxy {
 
     boolean updateUser(int userID, String password);                                               //更新用户信息
 
+    ArrayList<Student> queryAllStudent(int gradeID);                                               //获取所有学生对象
     boolean deleteStudent(int userID);                                                             //依据用户ID删除一个用户
 
     boolean checkUser(String username);                                                            //检查系统中是否存在username的用户

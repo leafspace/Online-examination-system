@@ -116,6 +116,7 @@
 									<span class="arrow"></span>
 								</a>
 								<ul class="sub-menu">
+									<li><a href="showGrade.do">查看班级</a></li>
 									<li><a href="#">学生管理</a></li>
 								</ul>
 							</li>

@@ -34,7 +34,7 @@ public class UploadQuestionBankAction extends Action {
     private String getNoRepeat(int userID) {
         String filePath = "F:\\StudentClass\\J2EE\\Curriculum Design\\程序代码\\Online examination system\\web\\WEB-INF\\upload\\";
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-        return filePath + userID + dateFormat.format(new Date());
+        return filePath + userID + dateFormat.format(new Date()) + this.getRandomString(15);
     }
 
     private String getRandomString(int length) {
@@ -72,7 +72,7 @@ public class UploadQuestionBankAction extends Action {
         fout.close();
 
         ArrayList<Question> questions = new CreateQuestions(filePath).createQuestions();
-        String questionBankName = ((UploadQuestionBankActionForm) form).getQuestionBankName();
+        String questionBankName = uploadQuestionBankActionForm.getQuestionBankName();
         ArrayList<QuestionBank> questionBanks = teacher.queryAllQuestionBank();
 
         if(questionBankName == null | questionBankName.length() == 0) {

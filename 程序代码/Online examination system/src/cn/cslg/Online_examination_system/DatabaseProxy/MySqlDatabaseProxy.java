@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 /**
  * Created by Administrator on 2017/4/18.
- * LastEdit: 2017-5-22
+ * LastEdit: 2017-5-26
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -166,7 +166,7 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
 
     public Grade queryGrade(int gradeID) {
         Grade grade = null;
-        String sqlStr = "SELECT gradeName FROM grade WHERE gradeID = 1;";
+        String sqlStr = "SELECT gradeName FROM grade WHERE gradeID = " + gradeID + ";";
         ResultSet resultSet = this.databaseConnection.query(sqlStr);
         try {
             if(resultSet.next()) {
@@ -456,6 +456,15 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
         return true;
     }
 
+    public boolean deleteAllStudent(int gradeID) {
+        boolean isSuccess = true;
+        ArrayList<Student> students = this.queryAllStudent(gradeID);
+        for(Student i : students) {
+            isSuccess = isSuccess & this.deleteStudent(i.getUserID());
+        }
+        return isSuccess;
+    }
+
     public boolean deleteExam(int examID) {
         String sqlStr = "DELETE FROM exam WHERE examID = " + examID + ";";
         int resultNumber = this.databaseConnection.update(sqlStr);
@@ -632,6 +641,23 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
             return false;
         }
         return true;
+    }
+
+    public ArrayList<Student> queryAllStudent(int gradeID) {
+        String sqlStr = "SELECT userID, username, password FROM user WHERE gradeID = " + gradeID + " AND identity = 'Student';";
+        ArrayList<Student> students = new ArrayList<>();
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        try {
+            while(resultSet.next()) {
+                int userID = Integer.parseInt(resultSet.getString(1));
+                String username = resultSet.getString(2);
+                String password = resultSet.getString(3);
+                students.add(new Student(userID, gradeID, username, password, "Student"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return students;
     }
 
     public boolean deleteStudent(int userID) {
