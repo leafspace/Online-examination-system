@@ -2,7 +2,7 @@ package cn.cslg.Online_examination_system.ToolBean;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-20
+ * LastEdit: 2017-5-26
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -22,6 +22,17 @@ public class Question {
 	    this.questionID = questionID;
 	    this.questionType = questionType;
     }
+
+	public Question(String questionType, String question, String A, String B, String C, String D, String E, String answer) {
+		this.questionType = questionType;
+		this.question = question;
+		this.A = A;
+		this.B = B;
+		this.C = C;
+		this.D = D;
+		this.E = E;
+		this.answer = answer;
+	}
 
     public Question(int questionID, String questionType, String question, String A, String B, String C, String D, String E, String answer) {
         this.questionID = questionID;

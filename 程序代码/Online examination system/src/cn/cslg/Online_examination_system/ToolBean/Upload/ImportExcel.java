@@ -32,6 +32,7 @@ public class ImportExcel {
     private String errorInfo;                                                                      //错误信息
 
     public ImportExcel() {
+        this.sheets = new ArrayList<List<List<String>>>();
     }
 
 

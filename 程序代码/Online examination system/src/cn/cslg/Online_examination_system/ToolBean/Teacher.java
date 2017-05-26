@@ -74,6 +74,10 @@ public class Teacher extends User {
 		return this.interfaceDatabaseProxy.queryQuestionBank(questionBankID);
 	}
 
+	public ArrayList<QuestionBank> queryAllQuestionBank() {
+		return this.interfaceDatabaseProxy.queryAllQuestionBank();
+	}
+
 	/**
 	 * @param courseID 课程ID
 	 * @return question list 题目列表

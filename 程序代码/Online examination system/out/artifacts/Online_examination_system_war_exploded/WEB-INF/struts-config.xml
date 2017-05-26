@@ -70,8 +70,8 @@
             <forward name="error" path="/editQuestionBankInformation.jsp" />
         </action>
         <action path="/uploadQuestionBank" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.UploadQuestionBankAction" name="uploadQuestionBankActionForm" scope="request">
-            <forward name="success" path="/teacherIndex.jsp" />
-            <forward name="failed" path="/studentIndex.jsp" />
+            <forward name="questionBankInformation" path="/questionBankInformation.jsp" />
+            <forward name="error" path="/editQuestionBankInformation.jsp" />
         </action>
 
 

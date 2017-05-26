@@ -36,6 +36,7 @@ public class ShowQuestionBankAction extends Action {
             courseID = Integer.parseInt(courseIDStr);
         }
         ArrayList<QuestionBank> questionBankArrayList = teacher.queryAllQuestionBank(courseID);
+        request.setAttribute("courseID", courseID);
         request.setAttribute("questionBanks", questionBankArrayList);
         return mapping.findForward("questionBankIndex");
     }

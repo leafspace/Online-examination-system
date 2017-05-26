@@ -239,7 +239,7 @@
                                     <div class="row-fluid">
 
                                             <div class="clearfix space5"></div>
-                                            <a href="showQuestionBankInformation.do?type=add" class="btn pull-right green"><i class="icon-plus"></i> 添加题库</a>
+                                            <a href="showQuestionBankInformation.do?type=add&courseID=<%=request.getAttribute("courseID")%>" class="btn pull-right green"><i class="icon-plus"></i> 添加题库</a>
 
                                     </div>
                                     <hr class="clearfix" />

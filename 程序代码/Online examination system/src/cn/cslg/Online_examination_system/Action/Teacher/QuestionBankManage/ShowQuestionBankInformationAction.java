@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/5/24.
- * LastEdit: 2017-5-24
+ * LastEdit: 2017-5-26
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -36,7 +36,11 @@ public class ShowQuestionBankInformationAction extends Action {
             ArrayList<Question> questions = teacher.queryAllQuestion(questionBankID);
             request.setAttribute("questionBank", questionBank);
             request.setAttribute("questions", questions);
+        } else {
+            String courseID = showQuestionBankInformationActionForm.getCourseID();
+            request.setAttribute("courseID", courseID);
         }
+
         request.setAttribute("type", type);
         switch (type)
         {

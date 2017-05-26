@@ -235,6 +235,7 @@
                                             <form class="form-horizontal" action="<%if(type.equals("add")){%>uploadQuestionBank.do<%}else{%>updateQuestionBank.do<%}%>" method="post" enctype="multipart/form-data">
                                                 <input type="hidden" name="type" value="<%=type%>">
                                                 <input type="hidden" name="questionBankID" value="<%if(type.equals("edit"))%><%=questionBank.getQuestionBankID()%>" >
+                                                <%if(type.equals("add")){%><input type="hidden" name="courseID" value="<%=request.getAttribute("courseID")%>"><%}%>
                                                 <div class="control-group">
                                                     <label class="control-label">题库名</label>
                                                     <div class="controls">
