@@ -42,11 +42,15 @@
 
         <form-bean name="showContactActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.ContactManage.ShowContactActionForm" />
         <form-bean name="addContactActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.ContactManage.SendContactActionForm" />
+
+        <form-bean name="showTeacherActionForm" type="cn.cslg.Online_examination_system.ActionForm.Manager.ShowTeacherActionForm" />
+        <form-bean name="addTeacherActionForm" type="cn.cslg.Online_examination_system.ActionForm.Manager.AddTeacherActionForm" />
+        <form-bean name="tobeTeacherActionForm" type="cn.cslg.Online_examination_system.ActionForm.Manager.TobeTeacherActionForm" />
     </form-beans>
 
     <action-mappings>
         <action path="/login" type="cn.cslg.Online_examination_system.Action.LoginAction" name="loginActionForm" scope="request">
-            <forward name="managerIndex" path="/elsePage/managerIndex.jsp" />
+            <forward name="managerIndex" path="/showTeacher.do" />
             <forward name="teacherIndex" path="/showCourse.do" />
             <forward name="studentIndex" path="/elsePage/studentIndex.jsp" />
             <forward name="error" path="/index.jsp" />
@@ -154,6 +158,17 @@
         </action>
         <action path="/sendContact" type="cn.cslg.Online_examination_system.Action.Teacher.ContactManage.SendContactAction" name="addContactActionForm" scope="request">
             <forward name="contactIndex" path="/showContact.do" />
+        </action>
+
+
+        <action path="/showTeacher" type="cn.cslg.Online_examination_system.Action.Manager.ShowTeacherAction" name="showTeacherActionForm" scope="request">
+            <forward name="managerIndex" path="/managerIndex.jsp" />
+        </action>
+        <action path="/addTeacher" type="cn.cslg.Online_examination_system.Action.Manager.AddTeacherAction" name="addTeacherActionForm" scope="request">
+            <forward name="managerIndex" path="/showTeacher.do" />
+        </action>
+        <action path="/dobeTeacher" type="cn.cslg.Online_examination_system.Action.Manager.TobeTeacherAction" name="tobeTeacherActionForm" scope="request">
+            <forward name="teacherIndex" path="/showCourse.do" />
         </action>
     </action-mappings>
 </struts-config>

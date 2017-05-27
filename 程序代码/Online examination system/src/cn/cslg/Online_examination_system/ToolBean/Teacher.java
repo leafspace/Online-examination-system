@@ -10,6 +10,11 @@ import java.util.ArrayList;
  *     E-mail: 18852923073@163.com
  */
 public class Teacher extends User {
+	public Teacher(int gradeID, String username, String password, String identity) {
+		super(username, password, identity);
+		this.setGradeID(gradeID);
+	}
+
 	public Teacher(int userID, int gradeID, String username, String password, String identity) {
 		super(userID, gradeID, username, password, identity);
 	}
