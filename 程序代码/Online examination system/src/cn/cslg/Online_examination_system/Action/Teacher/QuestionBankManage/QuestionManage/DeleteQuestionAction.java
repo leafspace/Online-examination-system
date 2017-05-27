@@ -1,8 +1,8 @@
 package cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.QuestionManage;
 
 import cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.QuestionManage.DeleteQuestionActionForm;
-import cn.cslg.Online_examination_system.ToolBean.Question;
 import cn.cslg.Online_examination_system.ToolBean.QuestionBank;
+import cn.cslg.Online_examination_system.ToolBean.Question;
 import cn.cslg.Online_examination_system.ToolBean.Teacher;
 
 import org.apache.struts.action.Action;

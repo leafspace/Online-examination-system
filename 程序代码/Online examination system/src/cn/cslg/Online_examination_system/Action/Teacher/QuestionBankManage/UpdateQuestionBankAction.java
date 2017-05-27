@@ -1,6 +1,5 @@
 package cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage;
 
-import cn.cslg.Online_examination_system.ActionForm.Teacher.CourseManage.UpdateCourseActionForm;
 import cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.UpdateQuestionBankActionForm;
 import cn.cslg.Online_examination_system.ToolBean.Question;
 import cn.cslg.Online_examination_system.ToolBean.QuestionBank;

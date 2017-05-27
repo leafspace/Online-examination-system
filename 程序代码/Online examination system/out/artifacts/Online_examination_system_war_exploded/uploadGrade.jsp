@@ -1,14 +1,9 @@
 <%@ page import="cn.cslg.Online_examination_system.ToolBean.Teacher" %>
-<%@ page import="cn.cslg.Online_examination_system.ToolBean.Question" %>
-<%@ page import="cn.cslg.Online_examination_system.ToolBean.QuestionBank" %>
-<%@ page import="java.util.ArrayList" %>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -39,7 +34,7 @@
     <div class="header navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container-fluid">
-                <a class="brand" href="#"><img src="media/image/logo.png" alt="logo" /></a>
+                <a class="brand" href="index.jsp"><img src="media/image/logo.png" alt="logo" /></a>
 
                 <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
                     <img src="media/image/menu-toggler.png" alt="" />
@@ -55,7 +50,7 @@
 
                         <ul class="dropdown-menu">
                             <li class="divider"></li>
-                            <li><a href="#"><i class="icon-key"></i> 注销</a></li>
+                            <li><a href="index.jsp"><i class="icon-key"></i> 注销</a></li>
                         </ul>
 
                     </li>
@@ -82,7 +77,7 @@
                 </li>
 
                 <li class="start">
-                    <a href="#">
+                    <a href="showCourse.do">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
@@ -97,13 +92,14 @@
 
                     <ul class="sub-menu">
 
-                        <li class="active">
+                        <li>
                             <a href="javascript:;">
                                 课程管理
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li class="active"><a href="#">题库管理</a></li>
+                                <li><a href="showCourse.do">查看课程</a></li>
+                                <li><a href="courseInformation.jsp?type=add">添加课程</a></li>
                             </ul>
                         </li>
 
@@ -113,7 +109,8 @@
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li><a href="#">学生管理</a></li>
+                                <li><a href="showGrade.do">查看班级</a></li>
+                                <li><a href="uploadGrade.jsp">添加班级</a></li>
                             </ul>
                         </li>
 
@@ -123,34 +120,22 @@
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li><a href="#">学生成绩查看</a></li>
+                                <li><a href="showExam.do">查看考试</a></li>
+                                <li><a href="uploadExam.jsp">添加考试</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
 
                 <li class="last ">
-
-                    <a href="#">
-
+                    <a href="showContact.do">
                         <i class="icon-bar-chart"></i>
-
                         <span class="title">反馈</span>
-
                     </a>
-
                 </li>
 
             </ul>
-
-            <!-- END SIDEBAR MENU -->
-
         </div>
-
-        <!-- END SIDEBAR -->
-
-        <!-- BEGIN PAGE -->
-
         <div class="page-content">
             <div id="portlet-config" class="modal hide">
                 <div class="modal-header">
@@ -161,10 +146,6 @@
                     <p>Here will be a configuration form</p>
                 </div>
             </div>
-
-            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-
-            <!-- BEGIN PAGE CONTAINER-->
 
             <div class="container-fluid">
                 <div class="row-fluid">
@@ -192,14 +173,12 @@
                         <ul class="breadcrumb">
                             <li>
                                 <i class="icon-home"></i>
-                                <a href="#">主页</a>
+                                <a href="showGrade.do">主页</a>
                                 <span class="icon-angle-right"></span>
                             </li>
                             <li>
-                                <a href="#">题库管理</a>
-                                <span class="icon-angle-right"></span>
+                                <a href="#">班级管理</a>
                             </li>
-                            <li><a href="#">题库查看</a></li>
                         </ul>
                     </div>
                 </div>
@@ -210,7 +189,7 @@
                             <div class="portlet-title">
                                 <div class="caption">
                                     <i class="icon-reorder"></i>
-                                    <span class="hidden-480">编辑题库</span>
+                                    <span class="hidden-480">上传班级</span>
                                 </div>
                             </div>
 
@@ -262,9 +241,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- END PAGE CONTAINER-->
-
         </div>
     </div>
 

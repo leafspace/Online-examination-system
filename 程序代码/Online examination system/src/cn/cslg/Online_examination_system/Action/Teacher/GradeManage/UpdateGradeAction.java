@@ -1,8 +1,9 @@
 package cn.cslg.Online_examination_system.Action.Teacher.GradeManage;
 
 import cn.cslg.Online_examination_system.ActionForm.Teacher.GradeManage.UpdateGradeActionForm;
-import cn.cslg.Online_examination_system.ToolBean.Grade;
 import cn.cslg.Online_examination_system.ToolBean.Teacher;
+import cn.cslg.Online_examination_system.ToolBean.Grade;
+
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;

@@ -1,14 +1,12 @@
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="cn.cslg.Online_examination_system.ToolBean.Teacher" %>
 <%@ page import="cn.cslg.Online_examination_system.ToolBean.Question" %>
 <%@ page import="cn.cslg.Online_examination_system.ToolBean.QuestionBank" %>
-<%@ page import="java.util.ArrayList" %>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -35,18 +33,13 @@
         Teacher teacher = (Teacher) request.getSession().getAttribute("user");
         QuestionBank questionBank = (QuestionBank) request.getAttribute("questionBank");
         ArrayList<Question> questions = (ArrayList<Question>) request.getAttribute("questions");
-
-        pageContext.setAttribute("teacher", teacher);
-        pageContext.setAttribute("questions", questions);
-        pageContext.setAttribute("questionBank", questionBank);
     %>
-    <bean:size id="infoLength" name="questions" />
 
     <body class="page-header-fixed">
     <div class="header navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container-fluid">
-                <a class="brand" href="#"><img src="media/image/logo.png" alt="logo" /></a>
+                <a class="brand" href="index.jsp"><img src="media/image/logo.png" alt="logo" /></a>
 
                 <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
                     <img src="media/image/menu-toggler.png" alt="" />
@@ -62,9 +55,8 @@
 
                         <ul class="dropdown-menu">
                             <li class="divider"></li>
-                            <li><a href="#"><i class="icon-key"></i> 注销</a></li>
+                            <li><a href="index.jsp"><i class="icon-key"></i> 注销</a></li>
                         </ul>
-
                     </li>
                 </ul>
             </div>
@@ -89,7 +81,7 @@
                 </li>
 
                 <li class="start">
-                    <a href="#">
+                    <a href="showCourse.do">
                         <i class="icon-home"></i>
                         <span class="title">首页</span>
                     </a>
@@ -103,14 +95,14 @@
                     </a>
 
                     <ul class="sub-menu">
-
-                        <li class="active">
+                        <li>
                             <a href="javascript:;">
                                 课程管理
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li class="active"><a href="#">题库管理</a></li>
+                                <li><a href="showCourse.do">查看课程</a></li>
+                                <li><a href="courseInformation.jsp?type=add">添加课程</a></li>
                             </ul>
                         </li>
 
@@ -120,7 +112,8 @@
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li><a href="#">学生管理</a></li>
+                                <li><a href="showGrade.do">查看班级</a></li>
+                                <li><a href="uploadGrade.jsp">添加班级</a></li>
                             </ul>
                         </li>
 
@@ -130,33 +123,21 @@
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li><a href="#">学生成绩查看</a></li>
+                                <li><a href="showExam.do">查看考试</a></li>
+                                <li><a href="uploadExam.jsp">添加考试</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
 
                 <li class="last ">
-
-                    <a href="#">
-
+                    <a href="showContact.do">
                         <i class="icon-bar-chart"></i>
-
                         <span class="title">反馈</span>
-
                     </a>
-
                 </li>
-
             </ul>
-
-            <!-- END SIDEBAR MENU -->
-
         </div>
-
-        <!-- END SIDEBAR -->
-
-        <!-- BEGIN PAGE -->
 
         <div class="page-content">
             <div id="portlet-config" class="modal hide">
@@ -168,10 +149,6 @@
                     <p>Here will be a configuration form</p>
                 </div>
             </div>
-
-            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-
-            <!-- BEGIN PAGE CONTAINER-->
 
             <div class="container-fluid">
                 <div class="row-fluid">
@@ -199,21 +176,17 @@
                         <ul class="breadcrumb">
                             <li>
                                 <i class="icon-home"></i>
-                                <a href="#">主页</a>
+                                <a href="showCourse.do">主页</a>
                                 <span class="icon-angle-right"></span>
                             </li>
                             <li>
                                 <a href="#">题库管理</a>
                                 <span class="icon-angle-right"></span>
                             </li>
-                            <li><a href="#">题库查看</a></li>
+                            <li><a href="#">查看题库</a></li>
                         </ul>
                     </div>
                 </div>
-
-                <!-- END PAGE HEADER-->
-
-                <!-- BEGIN PAGE CONTENT-->
 
                 <div class="row-fluid">
                     <div class="span12">
@@ -238,68 +211,63 @@
                                                 <div class="control-group">
                                                     <label class="control-label">题库名</label>
                                                     <div class="controls">
-                                                        <input type="text" class="m-wrap huge" name="questionBankName" readonly="readonly" value="<logic:notEmpty name="questionBank"><bean:write name="questionBank" property="questionBankName" /></logic:notEmpty>" />
-                                                        <span class="help-inline" style="color: red">
-                                                            <logic:notEmpty name="error">
-                                                                <bean:write name="error" />
-                                                            </logic:notEmpty>
-                                                        </span>
+                                                        <input type="text" class="m-wrap huge" name="questionBankName" readonly="readonly" value="<%=questionBank.getQuestionBankName()%>" />
                                                     </div>
                                                 </div>
 
                                                 <div class="control-group">
                                                     <div id="tab_1" class="tab-pane active">
                                                         <div style="height: auto;" id="accordion1" class="accordion in collapse">
-                                                            <logic:notEmpty name="questions">
-                                                            <logic:iterate id="questionInfo" name="questions" indexId="i" offset="0" length="infoLength">
-                                                                <div class="accordion-group">
-                                                                    <div class="accordion-heading">
-                                                                        <a href="#collapse_<%=i%>" data-parent="#accordion1" data-toggle="collapse" class="accordion-toggle collapsed">
-                                                                            问题<%=i+1%>&nbsp(ID:<%=questions.get(i).getQuestionID()%>)&nbsp:&nbsp<%=questions.get(i).question%>
-                                                                        </a>
-                                                                    </div>
+                                                            <%
+                                                                for(int i = 0; i < questions.size(); ++i) {
+                                                            %>
+                                                            <div class="accordion-group">
+                                                                <div class="accordion-heading">
+                                                                    <a href="#collapse_<%=i%>" data-parent="#accordion1" data-toggle="collapse" class="accordion-toggle collapsed">
+                                                                        问题<%=i+1%>&nbsp(ID:<%=questions.get(i).getQuestionID()%>)&nbsp:&nbsp<%=questions.get(i).question%>
+                                                                    </a>
+                                                                </div>
 
-                                                                    <div class="accordion-body collapse" id="collapse_<%=i%>" >
-                                                                        <div class="accordion-inner">
-                                                                            <table class="table table-striped table-hover">
-                                                                                <thead>
-                                                                                <tr>
-                                                                                    <th>问题</th>
-                                                                                    <th>类型</th>
-                                                                                    <th>A选项</th>
-                                                                                    <th>B选项</th>
-                                                                                    <th>C选项</th>
-                                                                                    <th>D选项</th>
-                                                                                    <th>E选项</th>
-                                                                                    <th>回答</th>
-                                                                                </tr>
-                                                                                </thead>
-                                                                                <tbody>
+                                                                <div class="accordion-body collapse" id="collapse_<%=i%>" >
+                                                                    <div class="accordion-inner">
+                                                                        <table class="table table-striped table-hover">
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <th>问题</th>
+                                                                                <th>类型</th>
+                                                                                <th>A选项</th>
+                                                                                <th>B选项</th>
+                                                                                <th>C选项</th>
+                                                                                <th>D选项</th>
+                                                                                <th>E选项</th>
+                                                                                <th>回答</th>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
 
-                                                                                <tr>
-                                                                                    <td><%=questions.get(i).question%></td>
-                                                                                    <td>
-                                                                                        <%=questions.get(i).getQuestionType().equals("Judge")?"判断":questions.get(i).getQuestionType().equals("MoreChoice")?"多选":"单选"%>
-                                                                                    </td>
-                                                                                    <td><%=questions.get(i).A%></td>
-                                                                                    <td><%=questions.get(i).B%></td>
-                                                                                    <td><%=questions.get(i).C%></td>
-                                                                                    <td><%=questions.get(i).D%></td>
-                                                                                    <td><%=questions.get(i).E%></td>
-                                                                                    <td><%=questions.get(i).answer%></td>
-                                                                                </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
+                                                                            <tr>
+                                                                                <td><%=questions.get(i).question%></td>
+                                                                                <td>
+                                                                                    <%=questions.get(i).getQuestionType().equals("Judge")?"判断":questions.get(i).getQuestionType().equals("MoreChoice")?"多选":"单选"%>
+                                                                                </td>
+                                                                                <td><%=questions.get(i).A%></td>
+                                                                                <td><%=questions.get(i).B%></td>
+                                                                                <td><%=questions.get(i).C%></td>
+                                                                                <td><%=questions.get(i).D%></td>
+                                                                                <td><%=questions.get(i).E%></td>
+                                                                                <td><%=questions.get(i).answer%></td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
                                                                     </div>
                                                                 </div>
-                                                            </logic:iterate>
-                                                            </logic:notEmpty>
+                                                            </div>
+                                                            <%
+                                                                }
+                                                            %>
                                                         </div>
                                                     </div>
                                                 </div>
-
-
                                             </form>
                                         </div>
                                     </div>
@@ -309,9 +277,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- END PAGE CONTAINER-->
-
         </div>
     </div>
 

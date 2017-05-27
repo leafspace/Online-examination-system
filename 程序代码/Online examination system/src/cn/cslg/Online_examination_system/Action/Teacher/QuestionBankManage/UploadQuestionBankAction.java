@@ -1,8 +1,8 @@
 package cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage;
 
 import cn.cslg.Online_examination_system.ActionForm.Teacher.QuestionBankManage.UploadQuestionBankActionForm;
-import cn.cslg.Online_examination_system.ToolBean.QuestionBank;
 import cn.cslg.Online_examination_system.ToolBean.Upload.CreateQuestions;
+import cn.cslg.Online_examination_system.ToolBean.QuestionBank;
 import cn.cslg.Online_examination_system.ToolBean.Question;
 import cn.cslg.Online_examination_system.ToolBean.Teacher;
 
@@ -17,11 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.File;
 import java.util.Date;
+import java.util.Random;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
-import java.util.Random;
 
 /**
  * Created by Administrator on 2017/5/25.

@@ -36,10 +36,10 @@ public class ShowQuestionBankInformationAction extends Action {
             ArrayList<Question> questions = teacher.queryAllQuestion(questionBankID);
             request.setAttribute("questionBank", questionBank);
             request.setAttribute("questions", questions);
-        } else {
-            String courseID = showQuestionBankInformationActionForm.getCourseID();
-            request.setAttribute("courseID", courseID);
         }
+
+        String courseID = showQuestionBankInformationActionForm.getCourseID();
+        request.setAttribute("courseID", courseID);
 
         request.setAttribute("type", type);
         switch (type)

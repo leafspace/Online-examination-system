@@ -34,6 +34,14 @@
         <form-bean name="showStudentActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.GradeManage.StudentManage.ShowStudentActionForm" />
         <form-bean name="deleteStudentActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.GradeManage.StudentManage.DeleteStudentActionForm" />
         <form-bean name="updateStudentActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.GradeManage.StudentManage.UpdateStudentActionForm" />
+
+        <form-bean name="showExamActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.ExamManage.ShowExamActionForm" />
+        <form-bean name="addExamActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.ExamManage.AddExamActionForm" />
+        <form-bean name="deleteExamActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.ExamManage.DeleteExamActionForm" />
+        <form-bean name="clearStudentScoreActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.ExamManage.ClearStudentScoreActionForm" />
+
+        <form-bean name="showContactActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.ContactManage.ShowContactActionForm" />
+        <form-bean name="addContactActionForm" type="cn.cslg.Online_examination_system.ActionForm.Teacher.ContactManage.SendContactActionForm" />
     </form-beans>
 
     <action-mappings>
@@ -72,29 +80,29 @@
         </action>
         <action path="/showQuestionBankInformation" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.ShowQuestionBankInformationAction" name="showQuestionBankInformationActionForm" scope="request">
             <forward name="questionBankInformation" path="/questionBankInformation.jsp" />
-            <forward name="editQuestionBankInformation" path="/editQuestionBankInformation.jsp" />
+            <forward name="editQuestionBankInformation" path="/updateQuestionBankInformation.jsp" />
         </action>
         <action path="/deleteQuestionBank" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.DeleteQuestionBankAction" name="deleteQuestionBankActionForm" scope="request">
             <forward name="questionBankIndex" path="/showQuestionBank.do" />
         </action>
         <action path="/updateQuestionBank" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.UpdateQuestionBankAction" name="updateQuestionBankActionForm" scope="request">
             <forward name="questionBankIndex" path="/showQuestionBank.do" />
-            <forward name="error" path="/editQuestionBankInformation.jsp" />
+            <forward name="error" path="/updateQuestionBankInformation.jsp" />
         </action>
         <action path="/uploadQuestionBank" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.UploadQuestionBankAction" name="uploadQuestionBankActionForm" scope="request">
             <forward name="questionBankInformation" path="/questionBankInformation.jsp" />
-            <forward name="error" path="/editQuestionBankInformation.jsp" />
+            <forward name="error" path="/updateQuestionBankInformation.jsp" />
         </action>
 
 
         <action path="/showQuestion" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.QuestionManage.ShowQuestionAction" name="showQuestionActionForm" scope="request">
-            <forward name="questionInformation" path="/editQuestion.jsp" />
+            <forward name="questionInformation" path="/updateQuestion.jsp" />
         </action>
         <action path="/deleteQuestion" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.QuestionManage.DeleteQuestionAction" name="deleteQuestionActionForm" scope="request">
-            <forward name="questionBankInformation" path="/editQuestionBankInformation.jsp" />
+            <forward name="questionBankInformation" path="/updateQuestionBankInformation.jsp" />
         </action>
         <action path="/updateQuestion" type="cn.cslg.Online_examination_system.Action.Teacher.QuestionBankManage.QuestionManage.UpdateQuestionAction" name="updateQuestionActionForm" scope="request">
-            <forward name="questionBankInformation" path="/editQuestionBankInformation.jsp" />
+            <forward name="questionBankInformation" path="/updateQuestionBankInformation.jsp" />
         </action>
 
 
@@ -115,6 +123,7 @@
             <forward name="error" path="/uploadGrade.jsp" />
         </action>
 
+
         <action path="/showStudent" type="cn.cslg.Online_examination_system.Action.Teacher.GradeManage.StudentManage.ShowStudentAction" name="showStudentActionForm" scope="request">
             <forward name="studentInformation" path="/updateStudent.jsp" />
         </action>
@@ -123,6 +132,28 @@
         </action>
         <action path="/updateStudent" type="cn.cslg.Online_examination_system.Action.Teacher.GradeManage.StudentManage.UpdateStudentAction" name="updateStudentActionForm" scope="request">
             <forward name="gradeInformation" path="/gradeInformation.jsp" />
+        </action>
+
+
+        <action path="/showExam" type="cn.cslg.Online_examination_system.Action.Teacher.ExamManage.ShowExamAction" name="showExamActionForm" scope="request">
+            <forward name="examIndex" path="/examIndex.jsp" />
+        </action>
+        <action path="/addExam" type="cn.cslg.Online_examination_system.Action.Teacher.ExamManage.AddExanAction" name="addExamActionForm" scope="request">
+            <forward name="examIndex" path="/showExam.do" />
+        </action>
+        <action path="/deleteExam" type="cn.cslg.Online_examination_system.Action.Teacher.ExamManage.DeleteExamAction" name="deleteExamActionForm" scope="request">
+            <forward name="examIndex" path="/showExam.do" />
+        </action>
+        <action path="/clearScore" type="cn.cslg.Online_examination_system.Action.Teacher.ExamManage.ClearStudentScoreAction" name="clearStudentScoreActionForm" scope="request">
+            <forward name="examIndex" path="/showExam.do" />
+        </action>
+
+
+        <action path="/showContact" type="cn.cslg.Online_examination_system.Action.Teacher.ContactManage.ShowContactAction" name="showContactActionForm" scope="request">
+            <forward name="contactIndex" path="/contactIndex.jsp" />
+        </action>
+        <action path="/sendContact" type="cn.cslg.Online_examination_system.Action.Teacher.ContactManage.SendContactAction" name="addContactActionForm" scope="request">
+            <forward name="contactIndex" path="/showContact.do" />
         </action>
     </action-mappings>
 </struts-config>

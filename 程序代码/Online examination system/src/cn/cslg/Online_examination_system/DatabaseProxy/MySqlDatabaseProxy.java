@@ -72,7 +72,7 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
 
     public QuestionBank queryQuestionBank(int questionBankID) {
         QuestionBank questionBank = null;
-        String sqlStr = "SELECT questionBankName FROM questionbank WHERE questionBankID = 1;";
+        String sqlStr = "SELECT questionBankName FROM questionbank WHERE questionBankID = " + questionBankID + ";";
         ResultSet resultSet = this.databaseConnection.query(sqlStr);
         try {
             if(resultSet.next()) {
@@ -465,6 +465,12 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
         return isSuccess;
     }
 
+    public boolean deleteExamScore(int examID) {
+        String sqlStr = "DELETE FROM examscore WHERE examID = " + examID + ";";
+        this.databaseConnection.update(sqlStr);
+        return true;
+    }
+
     public boolean deleteExam(int examID) {
         String sqlStr = "DELETE FROM exam WHERE examID = " + examID + ";";
         int resultNumber = this.databaseConnection.update(sqlStr);
@@ -787,5 +793,60 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
         String sqlStr = "SELECT questionBankID FROM question WHERE questionID = " + questionID + ";";
         ResultSet resultSet = this.databaseConnection.query(sqlStr);
         return this.getResultSetID(resultSet);
+    }
+
+    public int queryStudentScore(int examID, int userID) {
+        String sqlStr = "SELECT score FROM examscore WHERE userID = " + userID + " AND examID = " + examID + ";";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        try {
+            if(resultSet.next()) {
+                return Integer.parseInt(resultSet.getString(1));
+            } else {
+                return 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public boolean clearStudentScore(int examID, int userID) {
+        String sqlStr = "DELETE FROM examscore WHERE userID = " + userID + " AND examID = " + examID + ";";
+        int resultNumber = this.databaseConnection.update(sqlStr);
+        if(resultNumber != 1) {
+            System.out.println("Warning (MySqlDatabaseProxy - clearStudentScore) : The effect is wrong ! ");
+            return false;
+        }
+        return true;
+    }
+
+    public boolean addContactInformation(ContactInformation contactInformation) {
+        String sqlStr = "INSERT INTO contact VALUES (" + contactInformation.getUserID() + ", '" + contactInformation.getInformation() + "');";
+        int resultNumber = this.databaseConnection.update(sqlStr);
+        if(resultNumber != 1) {
+            System.out.println("Warning (MySqlDatabaseProxy - addContactInformation) : The effect is wrong ! ");
+            return false;
+        }
+        return true;
+    }
+
+    public ArrayList<ContactInformation> queryAllContactInformation(int userID) {
+        String sqlStr = "SELECT * FROM contact WHERE userID = 1 OR userID = " + userID + ";";
+        ArrayList<ContactInformation> contactInformations = new ArrayList<>();
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        try {
+            while(resultSet.next()) {
+                int tempUserID = Integer.parseInt(resultSet.getString(1));
+                String information = resultSet.getString(2);
+                if(tempUserID == 1) {
+                    contactInformations.add(new ContactInformation(tempUserID, "in", information));
+                } else {
+                    contactInformations.add(new ContactInformation(tempUserID, "out", information));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return contactInformations;
     }
 }

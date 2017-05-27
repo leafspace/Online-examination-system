@@ -12,333 +12,353 @@
     <schema id="6" parent="1" name="medicalplatform"/>
     <schema id="7" parent="1" name="mysql"/>
     <schema id="8" parent="1" name="performance_schema"/>
-    <table id="9" parent="2" name="course"/>
-    <table id="10" parent="2" name="exam"/>
-    <table id="11" parent="2" name="examscore"/>
-    <table id="12" parent="2" name="grade"/>
-    <table id="13" parent="2" name="question"/>
-    <table id="14" parent="2" name="questionbank"/>
-    <table id="15" parent="2" name="user"/>
-    <column id="16" parent="9" name="courseID">
+    <table id="9" parent="2" name="contact"/>
+    <table id="10" parent="2" name="course"/>
+    <table id="11" parent="2" name="exam"/>
+    <table id="12" parent="2" name="examscore"/>
+    <table id="13" parent="2" name="grade"/>
+    <table id="14" parent="2" name="question"/>
+    <table id="15" parent="2" name="questionbank"/>
+    <table id="16" parent="2" name="user"/>
+    <column id="17" parent="9" name="userID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="17" parent="9" name="userID">
+    <column id="18" parent="9" name="information">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="18" parent="9" name="courseName">
-      <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="9" name="courseInformation">
-      <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <index id="20" parent="9" name="userID">
+    <index id="19" parent="9" name="userID">
       <ColNames>userID</ColNames>
     </index>
-    <key id="21" parent="9" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>courseID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="22" parent="9" name="course_ibfk_1">
+    <foreign-key id="20" parent="9" name="contact_ibfk_1">
       <ColNames>userID</ColNames>
       <RefSchemaName>online_examination_system</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>userID</RefColNames>
     </foreign-key>
-    <column id="23" parent="10" name="examID">
+    <column id="21" parent="10" name="courseID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="24" parent="10" name="gradeID">
+    <column id="22" parent="10" name="userID">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="10" name="questionBankID">
+    <column id="23" parent="10" name="courseName">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="10" name="courseInformation">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="25" parent="10" name="userID">
+      <ColNames>userID</ColNames>
+    </index>
+    <key id="26" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>courseID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="27" parent="10" name="course_ibfk_1">
+      <ColNames>userID</ColNames>
+      <RefSchemaName>online_examination_system</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>userID</RefColNames>
+    </foreign-key>
+    <column id="28" parent="11" name="examID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="11" name="gradeID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="11" name="questionBankID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="10" name="examName">
+    <column id="31" parent="11" name="examName">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="10" name="examTime">
+    <column id="32" parent="11" name="examTime">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="10" name="examMinutes">
+    <column id="33" parent="11" name="examMinutes">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="10" name="examStartMinutes">
+    <column id="34" parent="11" name="examStartMinutes">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="10" name="judgeNumber">
+    <column id="35" parent="11" name="judgeNumber">
       <Position>8</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="10" name="morechoiceNumber">
+    <column id="36" parent="11" name="morechoiceNumber">
       <Position>9</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="10" name="onechoiceNumber">
+    <column id="37" parent="11" name="onechoiceNumber">
       <Position>10</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="33" parent="10" name="judgeScore">
+    <column id="38" parent="11" name="judgeScore">
       <Position>11</Position>
       <DataType>float|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="10" name="morechoiceScore">
+    <column id="39" parent="11" name="morechoiceScore">
       <Position>12</Position>
       <DataType>float|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="10" name="onechoiceScore">
+    <column id="40" parent="11" name="onechoiceScore">
       <Position>13</Position>
       <DataType>float|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="36" parent="10" name="gradeID">
+    <index id="41" parent="11" name="gradeID">
       <ColNames>gradeID</ColNames>
     </index>
-    <index id="37" parent="10" name="questionBankID">
+    <index id="42" parent="11" name="questionBankID">
       <ColNames>questionBankID</ColNames>
     </index>
-    <key id="38" parent="10" name="PRIMARY">
+    <key id="43" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>examID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="39" parent="10" name="exam_ibfk_1">
+    <foreign-key id="44" parent="11" name="exam_ibfk_1">
       <ColNames>gradeID</ColNames>
       <RefSchemaName>online_examination_system</RefSchemaName>
       <RefTableName>grade</RefTableName>
       <RefColNames>gradeID</RefColNames>
     </foreign-key>
-    <foreign-key id="40" parent="10" name="exam_ibfk_2">
+    <foreign-key id="45" parent="11" name="exam_ibfk_2">
       <ColNames>questionBankID</ColNames>
       <RefSchemaName>online_examination_system</RefSchemaName>
       <RefTableName>questionbank</RefTableName>
       <RefColNames>questionBankID</RefColNames>
     </foreign-key>
-    <column id="41" parent="11" name="examID">
+    <column id="46" parent="12" name="examID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="11" name="userID">
+    <column id="47" parent="12" name="userID">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="11" name="score">
+    <column id="48" parent="12" name="score">
       <Position>3</Position>
       <DataType>float|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="44" parent="11" name="examID">
+    <index id="49" parent="12" name="examID">
       <ColNames>examID</ColNames>
     </index>
-    <index id="45" parent="11" name="userID">
+    <index id="50" parent="12" name="userID">
       <ColNames>userID</ColNames>
     </index>
-    <foreign-key id="46" parent="11" name="examscore_ibfk_1">
+    <foreign-key id="51" parent="12" name="examscore_ibfk_1">
       <ColNames>examID</ColNames>
       <RefSchemaName>online_examination_system</RefSchemaName>
       <RefTableName>exam</RefTableName>
       <RefColNames>examID</RefColNames>
     </foreign-key>
-    <foreign-key id="47" parent="11" name="examscore_ibfk_2">
+    <foreign-key id="52" parent="12" name="examscore_ibfk_2">
       <ColNames>userID</ColNames>
       <RefSchemaName>online_examination_system</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>userID</RefColNames>
     </foreign-key>
-    <column id="48" parent="12" name="gradeID">
+    <column id="53" parent="13" name="gradeID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="49" parent="12" name="userID">
+    <column id="54" parent="13" name="userID">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="12" name="gradeName">
+    <column id="55" parent="13" name="gradeName">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="51" parent="12" name="gradeID">
+    <index id="56" parent="13" name="gradeID">
       <ColNames>gradeID</ColNames>
     </index>
-    <index id="52" parent="12" name="userID">
+    <index id="57" parent="13" name="userID">
       <ColNames>userID</ColNames>
     </index>
-    <key id="53" parent="12" name="PRIMARY">
+    <key id="58" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>gradeID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="54" parent="12" name="grade_ibfk_1">
+    <foreign-key id="59" parent="13" name="grade_ibfk_1">
       <ColNames>userID</ColNames>
       <RefSchemaName>online_examination_system</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>userID</RefColNames>
     </foreign-key>
-    <column id="55" parent="13" name="questionID">
+    <column id="60" parent="14" name="questionID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="56" parent="13" name="questionBankID">
+    <column id="61" parent="14" name="questionBankID">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="57" parent="13" name="questionType">
+    <column id="62" parent="14" name="questionType">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="58" parent="13" name="question">
+    <column id="63" parent="14" name="question">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="59" parent="13" name="A">
+    <column id="64" parent="14" name="A">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="60" parent="13" name="B">
+    <column id="65" parent="14" name="B">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="61" parent="13" name="C">
+    <column id="66" parent="14" name="C">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="62" parent="13" name="D">
+    <column id="67" parent="14" name="D">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="63" parent="13" name="E">
+    <column id="68" parent="14" name="E">
       <Position>9</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="64" parent="13" name="answer">
+    <column id="69" parent="14" name="answer">
       <Position>10</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="65" parent="13" name="questionBankID">
+    <index id="70" parent="14" name="questionBankID">
       <ColNames>questionBankID</ColNames>
     </index>
-    <key id="66" parent="13" name="PRIMARY">
+    <key id="71" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>questionID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="67" parent="13" name="question_ibfk_1">
+    <foreign-key id="72" parent="14" name="question_ibfk_1">
       <ColNames>questionBankID</ColNames>
       <RefSchemaName>online_examination_system</RefSchemaName>
       <RefTableName>questionbank</RefTableName>
       <RefColNames>questionBankID</RefColNames>
     </foreign-key>
-    <column id="68" parent="14" name="questionBankID">
+    <column id="73" parent="15" name="questionBankID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="69" parent="14" name="courseID">
+    <column id="74" parent="15" name="courseID">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="70" parent="14" name="questionBankName">
+    <column id="75" parent="15" name="questionBankName">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="71" parent="14" name="courseID">
+    <index id="76" parent="15" name="courseID">
       <ColNames>courseID</ColNames>
     </index>
-    <index id="72" parent="14" name="questionBankID">
+    <index id="77" parent="15" name="questionBankID">
       <ColNames>questionBankID</ColNames>
     </index>
-    <key id="73" parent="14" name="PRIMARY">
+    <key id="78" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>questionBankID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="74" parent="14" name="questionbank_ibfk_1">
+    <foreign-key id="79" parent="15" name="questionbank_ibfk_1">
       <ColNames>courseID</ColNames>
       <RefSchemaName>online_examination_system</RefSchemaName>
       <RefTableName>course</RefTableName>
       <RefColNames>courseID</RefColNames>
     </foreign-key>
-    <column id="75" parent="15" name="userID">
+    <column id="80" parent="16" name="userID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="76" parent="15" name="gradeID">
+    <column id="81" parent="16" name="gradeID">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="77" parent="15" name="username">
+    <column id="82" parent="16" name="username">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="78" parent="15" name="password">
+    <column id="83" parent="16" name="password">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="79" parent="15" name="identity">
+    <column id="84" parent="16" name="identity">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="80" parent="15" name="gradeID">
+    <index id="85" parent="16" name="gradeID">
       <ColNames>gradeID</ColNames>
     </index>
-    <index id="81" parent="15" name="userID">
+    <index id="86" parent="16" name="userID">
       <ColNames>userID</ColNames>
     </index>
-    <key id="82" parent="15" name="PRIMARY">
+    <key id="87" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="83" parent="15" name="user_ibfk_1">
+    <foreign-key id="88" parent="16" name="user_ibfk_1">
       <ColNames>gradeID</ColNames>
       <RefSchemaName>online_examination_system</RefSchemaName>
       <RefTableName>grade</RefTableName>

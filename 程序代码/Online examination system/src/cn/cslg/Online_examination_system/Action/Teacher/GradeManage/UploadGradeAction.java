@@ -1,26 +1,26 @@
 package cn.cslg.Online_examination_system.Action.Teacher.GradeManage;
 
 import cn.cslg.Online_examination_system.ActionForm.Teacher.GradeManage.UploadGradeActionForm;
+import cn.cslg.Online_examination_system.ToolBean.Upload.CreateStudents;
 import cn.cslg.Online_examination_system.ToolBean.Grade;
-import cn.cslg.Online_examination_system.ToolBean.QuestionBank;
 import cn.cslg.Online_examination_system.ToolBean.Student;
 import cn.cslg.Online_examination_system.ToolBean.Teacher;
-import cn.cslg.Online_examination_system.ToolBean.Upload.CreateStudents;
+
 import org.apache.struts.action.Action;
+import org.apache.struts.upload.FormFile;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.apache.struts.upload.FormFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Random;
+import java.util.Date;
+import java.io.File;
 
 /**
  * Created by Administrator on 2017/5/26.

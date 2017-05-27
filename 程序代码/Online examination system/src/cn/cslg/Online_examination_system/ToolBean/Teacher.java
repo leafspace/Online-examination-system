@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/5/20.
- * LastEdit: 2017-5-26
+ * LastEdit: 2017-5-27
  * Contact me:
  *     Phone: 18852923073
  *     E-mail: 18852923073@163.com
@@ -75,7 +75,12 @@ public class Teacher extends User {
 	}
 
 	public ArrayList<QuestionBank> queryAllQuestionBank() {
-		return this.interfaceDatabaseProxy.queryAllQuestionBank();
+		ArrayList<QuestionBank> questionBanks = new ArrayList<>();
+		ArrayList<Course> courses = this.queryAllCourse();
+		for(Course course : courses) {
+			questionBanks.addAll(this.interfaceDatabaseProxy.queryAllQuestionBank(course.getCourseID()));
+		}
+		return questionBanks;
 	}
 
 	/**
@@ -197,6 +202,12 @@ public class Teacher extends User {
 	 */
 	public boolean deleteGrade(int gradeID) {
 		boolean isSuccess = this.interfaceDatabaseProxy.deleteAllStudent(gradeID);
+		ArrayList<Exam> exams = this.queryAllExam();
+		for(Exam exam : exams) {
+		    if(exam.gradeID == gradeID) {
+		        isSuccess = isSuccess & this.interfaceDatabaseProxy.deleteExam(exam.examID);
+            }
+        }
 		if(!isSuccess) {
 		    return false;
         }
@@ -271,7 +282,13 @@ public class Teacher extends User {
      * @function 查询教师拥有的所有测试
 	 */
 	public ArrayList<Exam> queryAllExam() {
-	    return this.interfaceDatabaseProxy.queryAllExam(this.userID);
+		ArrayList<Grade> grades = this.queryAllGrade();
+		ArrayList<Exam> exams = new ArrayList<>();
+		for(Grade grade : grades) {
+			exams.addAll(this.interfaceDatabaseProxy.queryAllExam(grade.getGradeID()));
+		}
+
+	    return exams;
 	}
 
 	/**
@@ -294,7 +311,7 @@ public class Teacher extends User {
      * @function 删除测试
 	 */
 	public boolean deleteExam(int examID) {
-		return this.interfaceDatabaseProxy.deleteExam(examID);
+		return this.interfaceDatabaseProxy.deleteExam(examID) & this.interfaceDatabaseProxy.deleteExamScore(examID);
 	}
 
 	public int queryQuestionBankCourseID(int questionBankID) {
@@ -303,5 +320,29 @@ public class Teacher extends User {
 
     public int queryQuestionQuestionBankID(int questionID) {
         return this.interfaceDatabaseProxy.queryQuestionQuestionBankID(questionID);
+    }
+
+    public ArrayList<StudentScore> queryStudentScoreList(int examID) {
+		ArrayList<StudentScore> studentScores = new ArrayList<>();
+		Exam exam = this.interfaceDatabaseProxy.queryExam(examID);
+		ArrayList<Student> students = this.interfaceDatabaseProxy.queryAllStudent(exam.gradeID);
+
+		for(Student i : students) {
+			studentScores.add(new StudentScore(i.getUserID(), examID, i.getUserName(), exam.examName,
+					this.interfaceDatabaseProxy.queryStudentScore(examID, i.getUserID())));
+		}
+		return studentScores;
+	}
+
+	public boolean clearStudentScore(int examID, int userID) {
+		return this.interfaceDatabaseProxy.clearStudentScore(examID, userID);
+	}
+
+	public ArrayList<ContactInformation> queryAllContactInformation() {
+	    return this.interfaceDatabaseProxy.queryAllContactInformation(this.userID);
+    }
+
+    public boolean addContactInformation(ContactInformation contactInformation) {
+	    return this.interfaceDatabaseProxy.addContactInformation(contactInformation);
     }
 }

@@ -46,6 +46,7 @@ public interface InterfaceDatabaseProxy {
     boolean deleteAllQuestion(int questionBankID);                                                 //依据题库ID删除所有问题
     boolean deleteGrade(int gradeID);                                                              //依据班级ID删除一个班级
     boolean deleteAllStudent(int gradeID);                                                         //依据班级ID删除所有学生
+    boolean deleteExamScore(int examID);                                                           //依据测试ID删除所有的课程
     boolean deleteExam(int examID);                                                                //依据测试ID删除一个测试
 
 
@@ -76,4 +77,10 @@ public interface InterfaceDatabaseProxy {
 
     int queryQuestionBankCourseID(int questionBankID);                                             //通过题库ID查找对应课程ID
     int queryQuestionQuestionBankID(int questionID);                                               //通过题目ID查找对应题库ID
+
+    int queryStudentScore(int examID, int userID);                                                 //通过考试信息，查询学生分数
+    boolean clearStudentScore(int examID, int userID);                                             //依据信息，删除学生分数
+
+    boolean addContactInformation(ContactInformation contactInformation);                          //添加一条反馈信息
+    ArrayList<ContactInformation> queryAllContactInformation(int userID);                          //依据用户ID查询所有管理员和本人的信息
 }
