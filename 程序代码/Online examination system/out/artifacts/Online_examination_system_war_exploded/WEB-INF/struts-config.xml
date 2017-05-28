@@ -46,13 +46,16 @@
         <form-bean name="showTeacherActionForm" type="cn.cslg.Online_examination_system.ActionForm.Manager.ShowTeacherActionForm" />
         <form-bean name="addTeacherActionForm" type="cn.cslg.Online_examination_system.ActionForm.Manager.AddTeacherActionForm" />
         <form-bean name="tobeTeacherActionForm" type="cn.cslg.Online_examination_system.ActionForm.Manager.TobeTeacherActionForm" />
+
+        <form-bean name="showExamListAction" type="cn.cslg.Online_examination_system.ActionForm.Student.ShowExamListActionForm" />
+        <form-bean name="showExamScoreAction" type="cn.cslg.Online_examination_system.ActionForm.Student.ShowExamScoreActionForm" />
     </form-beans>
 
     <action-mappings>
         <action path="/login" type="cn.cslg.Online_examination_system.Action.LoginAction" name="loginActionForm" scope="request">
             <forward name="managerIndex" path="/showTeacher.do" />
             <forward name="teacherIndex" path="/showCourse.do" />
-            <forward name="studentIndex" path="/elsePage/studentIndex.jsp" />
+            <forward name="studentIndex" path="/showExamList.do" />
             <forward name="error" path="/index.jsp" />
         </action>
         <action path="/reset" type="cn.cslg.Online_examination_system.Action.ResetAction" name="resetActionForm" scope="request">
@@ -169,6 +172,14 @@
         </action>
         <action path="/dobeTeacher" type="cn.cslg.Online_examination_system.Action.Manager.TobeTeacherAction" name="tobeTeacherActionForm" scope="request">
             <forward name="teacherIndex" path="/showCourse.do" />
+        </action>
+
+
+        <action path="/showExamList" type="cn.cslg.Online_examination_system.Action.Student.ShowExamListAction" name="showStudentActionForm" scope="request">
+            <forward name="studentIndex" path="/studentIndex.jsp" />
+        </action>
+        <action path="/showExamScore" type="cn.cslg.Online_examination_system.Action.Student.ShowExamScoreAction" name="showExamScoreAction" scope="request">
+            <forward name="studentInformation" path="/studentInformation.jsp" />
         </action>
     </action-mappings>
 </struts-config>

@@ -79,6 +79,7 @@ public interface InterfaceDatabaseProxy {
     int queryQuestionQuestionBankID(int questionID);                                               //通过题目ID查找对应题库ID
 
     int queryStudentScore(int examID, int userID);                                                 //通过考试信息，查询学生分数
+    StudentScore queryStudentScoreObject(int examID, int userID);                                  //查询出学生分数对象
     boolean clearStudentScore(int examID, int userID);                                             //依据信息，删除学生分数
 
     boolean addContactInformation(ContactInformation contactInformation);                          //添加一条反馈信息

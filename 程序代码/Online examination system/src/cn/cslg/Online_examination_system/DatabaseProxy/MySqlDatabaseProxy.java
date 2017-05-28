@@ -809,6 +809,23 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
         }
         return -1;
     }
+    public StudentScore queryStudentScoreObject(int examID, int userID) {
+        String sqlStr = "SELECT score FROM examscore WHERE userID = " + userID + " AND examID = " + examID + ";";
+        ResultSet resultSet = this.databaseConnection.query(sqlStr);
+        try {
+            if(resultSet.next()) {
+                int score = Integer.parseInt(resultSet.getString(1));
+                Student student = this.queryStudent(userID);
+                Exam exam = this.queryExam(examID);
+                return new StudentScore(userID, examID, student.getUserName(), exam.examName, score);
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public boolean clearStudentScore(int examID, int userID) {
         String sqlStr = "DELETE FROM examscore WHERE userID = " + userID + " AND examID = " + examID + ";";

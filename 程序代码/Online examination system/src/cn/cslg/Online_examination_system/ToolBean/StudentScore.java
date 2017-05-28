@@ -12,7 +12,7 @@ public class StudentScore {
     private int examID;
     private String userName;
     private String examName;
-    private int score;
+    private double score;
 
     public StudentScore(int userID, int examID, String userName, String examName) {
         this.userID = userID;
@@ -21,7 +21,7 @@ public class StudentScore {
         this.examName = examName;
     }
 
-    public StudentScore(int userID, int examID, String userName, String examName, int score) {
+    public StudentScore(int userID, int examID, String userName, String examName, double score) {
         this.userID = userID;
         this.examID = examID;
         this.userName = userName;
@@ -45,7 +45,7 @@ public class StudentScore {
         return this.examName;
     }
 
-    public int getScore() {
+    public double getScore() {
         return this.score;
     }
 

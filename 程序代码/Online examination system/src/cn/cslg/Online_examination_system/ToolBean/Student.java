@@ -18,21 +18,15 @@ public class Student extends User {
 		super(userID, gradeID, username, password, identity);
 	}
 
-	/**
-     * @funtion 创建一个无序的试卷
-     *
-     * */
-	public void createExamPaper() {
-		// TODO implement here
+    public Exam queryExam(int examID) {
+        return this.interfaceDatabaseProxy.queryExam(examID);
+    }
+
+	public ArrayList<Exam> queryAllExam() {
+		return this.interfaceDatabaseProxy.queryAllExam(this.getGradeID());
 	}
 
-	/**
-     * @return score 试卷评分
-     * @function 提交试卷并评分
-     * */
-	public double submitExamPaper(ArrayList<Question> question_list) {
-		// TODO implement here
-        return 0;
-	}
-
+	public StudentScore queryStudentScore(int examID) {
+	    return this.interfaceDatabaseProxy.queryStudentScoreObject(examID, this.userID);
+    }
 }
