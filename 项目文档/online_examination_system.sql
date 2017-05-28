@@ -10,10 +10,25 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2017-05-21 16:53:10
+Date: 2017-05-28 21:44:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for contact
+-- ----------------------------
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE `contact` (
+  `userID` int(11) NOT NULL,
+  `information` varchar(255) NOT NULL,
+  KEY `userID` (`userID`),
+  CONSTRAINT `contact_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of contact
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for course
@@ -27,7 +42,7 @@ CREATE TABLE `course` (
   PRIMARY KEY (`courseID`),
   KEY `userID` (`userID`),
   CONSTRAINT `course_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of course
@@ -43,8 +58,8 @@ CREATE TABLE `exam` (
   `questionBankID` int(11) NOT NULL,
   `examName` varchar(255) NOT NULL,
   `examTime` varchar(255) NOT NULL,
-  `examMinutes` varchar(255) NOT NULL,
-  `examStartMinutes` varchar(255) NOT NULL,
+  `examMinutes` int(11) NOT NULL,
+  `examStartMinutes` int(11) NOT NULL,
   `judgeNumber` int(11) NOT NULL,
   `morechoiceNumber` int(11) NOT NULL,
   `onechoiceNumber` int(11) NOT NULL,
@@ -54,9 +69,9 @@ CREATE TABLE `exam` (
   PRIMARY KEY (`examID`),
   KEY `gradeID` (`gradeID`),
   KEY `questionBankID` (`questionBankID`),
-  CONSTRAINT `exam_ibfk_2` FOREIGN KEY (`questionBankID`) REFERENCES `questionbank` (`questionBankID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`gradeID`) REFERENCES `grade` (`gradeID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`gradeID`) REFERENCES `grade` (`gradeID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `exam_ibfk_2` FOREIGN KEY (`questionBankID`) REFERENCES `questionbank` (`questionBankID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of exam
@@ -72,8 +87,8 @@ CREATE TABLE `examscore` (
   `score` float NOT NULL,
   KEY `examID` (`examID`),
   KEY `userID` (`userID`),
-  CONSTRAINT `examscore_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `examscore_ibfk_1` FOREIGN KEY (`examID`) REFERENCES `exam` (`examID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `examscore_ibfk_1` FOREIGN KEY (`examID`) REFERENCES `exam` (`examID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `examscore_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -92,7 +107,7 @@ CREATE TABLE `grade` (
   KEY `gradeID` (`gradeID`),
   KEY `userID` (`userID`),
   CONSTRAINT `grade_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of grade
@@ -118,7 +133,7 @@ CREATE TABLE `question` (
   PRIMARY KEY (`questionID`),
   KEY `questionBankID` (`questionBankID`),
   CONSTRAINT `question_ibfk_1` FOREIGN KEY (`questionBankID`) REFERENCES `questionbank` (`questionBankID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of question
@@ -136,7 +151,7 @@ CREATE TABLE `questionbank` (
   KEY `questionBankID` (`questionBankID`),
   KEY `courseID` (`courseID`),
   CONSTRAINT `questionbank_ibfk_1` FOREIGN KEY (`courseID`) REFERENCES `course` (`courseID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of questionbank

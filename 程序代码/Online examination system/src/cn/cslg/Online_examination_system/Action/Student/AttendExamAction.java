@@ -116,6 +116,8 @@ public class AttendExamAction extends Action {
         String finishTime = simpleDateFormat.format(new Date(date.getTime() + exam.examMinutes * 60 * 1000));
         Date finishDate = simpleDateFormat.parse(finishTime);
 
+        request.getSession().removeAttribute("sendPaparToken");
+
         request.getSession().setAttribute("exam", exam);
         request.getSession().setAttribute("finishDate", finishDate);
         request.getSession().setAttribute("oneChoicePapar", oneChoicePapar);

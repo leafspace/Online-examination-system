@@ -1,3 +1,7 @@
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 	<head>
 		<meta charset="utf-8" />
@@ -16,19 +20,7 @@
 		<link href="media/css/error.css" rel="stylesheet" type="text/css"/>
 		<link rel="shortcut icon" href="media/image/laboratory.ico" />
 	</head>
-    <script>
-        var secs = 3; //倒计时的秒数
-        var URL = 'showExamList.do';
-        function Load(url){
-            URL = url;
-            for(var i=secs;i>=0;i--) {
-                window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000);
-            }
-        }
-        function doUpdate(num) {
-            if(num == 0) { window.location = URL; }
-        }
-    </script>
+    <% response.setHeader("Refresh","3;URL='showExamList.do'");%>
 	<body class="page-404-full-page">
 		<div class="row-fluid">
 			<div class="span12 page-404">
@@ -56,5 +48,28 @@
 			   App.init();
 			});
 		</script>
+        <script language="javascript">
+            //防止页面后退
+            history.pushState(null, null, document.URL);
+            window.addEventListener('popstate', function () {
+                history.pushState(null, null, document.URL);
+            });
+
+            document.onkeydown = function() {
+                if(event.keyCode==116) {
+                    event.keyCode=0;
+                    event.returnValue = false;
+                }
+            }
+
+            document.oncontextmenu = function() {
+                event.returnValue = false;
+            }
+
+            function submitPapar(){
+                document.examPapar.submit();
+            }
+
+        </script>
 	</body>
 </html>

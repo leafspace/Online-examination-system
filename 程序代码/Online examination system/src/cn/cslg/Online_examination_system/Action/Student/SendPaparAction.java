@@ -92,6 +92,7 @@ public class SendPaparAction extends Action {
         }
 
         student.addScore(exam.examID, studentScore);
+        request.getSession().removeAttribute("attendToken");
         request.getSession().setAttribute("sendPaparToken", true);
         return mapping.findForward("examScoreInformation");
     }

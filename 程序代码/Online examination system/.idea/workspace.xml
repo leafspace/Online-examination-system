@@ -51,28 +51,7 @@
     <favorites_list name="Online examination system" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="studentExam.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/studentExam.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="250" column="8" lean-forward="true" selection-start-line="250" selection-start-column="8" selection-end-line="272" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="studentInformation.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/studentInformation.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="853">
-              <caret line="233" column="17" lean-forward="false" selection-start-line="233" selection-start-column="17" selection-end-line="233" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,7 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Showing 1 to 5 of 6 entries</find>
       <find>search</find>
       <find>Search</find>
       <find>s2id_autogen1</find>
@@ -117,6 +95,7 @@
       <find>queryAllExam</find>
       <find>query</find>
       <find>hh:mm</find>
+      <find>jquery-1.10.1.min.map</find>
     </findStrings>
     <replaceStrings>
       <replace>int</replace>
@@ -144,21 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/updateStudent.jsp" />
-        <option value="$PROJECT_DIR$/web/examIndex.jsp" />
-        <option value="$PROJECT_DIR$/web/uploadExam.jsp" />
-        <option value="$PROJECT_DIR$/web/contactIndex.jsp" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/CourseManage/ShowCourseAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/ExamManage/ClearStudentScoreAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/ExamManage/DeleteExamAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/GradeManage/StudentManage/ShowStudentAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/GradeManage/StudentManage/UpdateStudentAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/GradeManage/DeleteGradeAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/GradeManage/UpdateGradeAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/GradeManage/UploadGradeAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/QuestionBankManage/QuestionManage/DeleteQuestionAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/QuestionBankManage/UpdateQuestionBankAction.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/QuestionBankManage/UploadQuestionBankAction.java" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ActionForm/Manager/ShowTeacherActionForm.java" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ToolBean/Teacher.java" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ActionForm/Manager/AddTeacherActionForm.java" />
@@ -168,8 +132,6 @@
         <option value="$PROJECT_DIR$/web/managerIndex.html" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Manager/TobeTeacherAction.java" />
         <option value="$PROJECT_DIR$/web/uploadTeacher.html" />
-        <option value="$PROJECT_DIR$/web/uploadTeacher.jsp" />
-        <option value="$PROJECT_DIR$/web/managerIndex.jsp" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ToolBean/Manager.java" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Manager/AddTeacherAction.java" />
         <option value="$PROJECT_DIR$/web/layout_horizontal_menu1.html" />
@@ -182,19 +144,36 @@
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ActionForm/Student/AttendExamActionForm.java" />
         <option value="$PROJECT_DIR$/web/attendExamError.html" />
         <option value="$PROJECT_DIR$/web/studentExam.html" />
-        <option value="$PROJECT_DIR$/web/studentIndex.jsp" />
-        <option value="$PROJECT_DIR$/web/attendExamError.jsp" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Student/AttendExamAction.java" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ActionForm/Student/SendPaparActionForm.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/struts-config.xml" />
-        <option value="$PROJECT_DIR$/web/studentExam.jsp" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/DatabaseInterface/InterfaceDatabaseProxy.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a5bae9e0-314b-4504-815a-f2be3f84f939/console.sql" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/DatabaseProxy/MySqlDatabaseProxy.java" />
-        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Student/SendPaparAction.java" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ToolBean/Student.java" />
         <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/ExamManage/AddExanAction.java" />
         <option value="$PROJECT_DIR$/web/studentInformation.jsp" />
+        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Student/SendPaparAction.java" />
+        <option value="$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Student/AttendExamAction.java" />
+        <option value="$PROJECT_DIR$/web/media/js/app.js" />
+        <option value="$PROJECT_DIR$/web/studentExam.jsp" />
+        <option value="$PROJECT_DIR$/web/attendExamError.jsp" />
+        <option value="$PROJECT_DIR$/web/contactIndex.jsp" />
+        <option value="$PROJECT_DIR$/web/courseIndex.jsp" />
+        <option value="$PROJECT_DIR$/web/courseInformation.jsp" />
+        <option value="$PROJECT_DIR$/web/examIndex.jsp" />
+        <option value="$PROJECT_DIR$/web/gradeIndex.jsp" />
+        <option value="$PROJECT_DIR$/web/gradeInformation.jsp" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/managerIndex.jsp" />
+        <option value="$PROJECT_DIR$/web/questionBankIndex.jsp" />
+        <option value="$PROJECT_DIR$/web/questionBankInformation.jsp" />
+        <option value="$PROJECT_DIR$/web/studentIndex.jsp" />
+        <option value="$PROJECT_DIR$/web/updateQuestion.jsp" />
+        <option value="$PROJECT_DIR$/web/updateQuestionBankInformation.jsp" />
+        <option value="$PROJECT_DIR$/web/updateStudent.jsp" />
+        <option value="$PROJECT_DIR$/web/uploadExam.jsp" />
+        <option value="$PROJECT_DIR$/web/uploadGrade.jsp" />
+        <option value="$PROJECT_DIR$/web/uploadTeacher.jsp" />
       </list>
     </option>
   </component>
@@ -254,8 +233,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,7 +248,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -832,11 +811,12 @@
       <workItem from="1495893773661" duration="2122000" />
       <workItem from="1495935403105" duration="13384000" />
       <workItem from="1495958401367" duration="16818000" />
+      <workItem from="1495976503016" duration="3251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238476000" />
+    <option name="totallyTimeSpent" value="241727000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -848,7 +828,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -873,9 +853,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35369775" sideWeight="0.4946695" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.49573562" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23134328" sideWeight="0.49196142" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23400854" sideWeight="0.49196142" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20469083" sideWeight="0.5080386" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20469083" sideWeight="0.5080386" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -885,6 +864,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5058043" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.4978678" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -909,111 +889,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ActionForm/Manager/TobeTeacherActionForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Manager/TobeTeacherAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ActionForm/Manager/AddTeacherActionForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Manager/ShowTeacherAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploadGrade.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/uploadTeacher.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ToolBean/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/managerIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="118" column="16" lean-forward="false" selection-start-line="118" selection-start-column="16" selection-end-line="127" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/questionBankIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2835">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Manager/AddTeacherAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="72" lean-forward="true" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ActionForm/LoginActionForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="60" column="13" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="60" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ActionForm/Student/ShowExamListActionForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ToolBean/ContactInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/fdae7007/a5bae9e0-314b-4504-815a-f2be3f84f939/online_examination_system.contact">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1068,27 +943,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/contactIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/questionBankInformation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="35" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/DatabaseConnector/MySqlDatabaseConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1104,23 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/examIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3375">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/studentIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="144" column="128" lean-forward="false" selection-start-line="144" selection-start-column="128" selection-end-line="144" selection-end-column="128" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,7 +969,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1137,35 +977,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/attendExamError.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="53" lean-forward="true" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/courseInformation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/gradeIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3542">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Filter/CharacterEncodingFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,7 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1181,7 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,7 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="43" lean-forward="false" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1197,15 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Student/AttendExamAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="64" column="35" lean-forward="true" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1213,7 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,7 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="21" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1240,7 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="29" column="30" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="29" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1248,7 +1048,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1257,10 +1056,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5bae9e0-314b-4504-815a-f2be3f84f939/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/DatabaseInterface/InterfaceDatabaseProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="39" />
+        <state relative-caret-position="757">
+          <caret line="82" column="4" lean-forward="false" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/DatabaseProxy/MySqlDatabaseProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="833" column="77" lean-forward="false" selection-start-line="833" selection-start-column="77" selection-end-line="833" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ToolBean/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="71" column="55" lean-forward="true" selection-start-line="71" selection-start-column="55" selection-end-line="71" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/ExamManage/AddExanAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Online_examination_system_war_exploded/courseIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3510">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Online examination system/cn/cslg/Online_examination_system/Action/LoginAction.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1278,58 +1114,194 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/DatabaseInterface/InterfaceDatabaseProxy.java">
+    <entry file="file://$PROJECT_DIR$/web/media/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="82" column="4" lean-forward="false" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="109" />
+        <state relative-caret-position="585">
+          <caret line="123" column="20" lean-forward="false" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/DatabaseProxy/MySqlDatabaseProxy.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Student/AttendExamAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="833" column="77" lean-forward="false" selection-start-line="833" selection-start-column="77" selection-end-line="833" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/ToolBean/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="71" column="55" lean-forward="true" selection-start-line="71" selection-start-column="55" selection-end-line="71" selection-end-column="55" />
+        <state relative-caret-position="703">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Student/SendPaparAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="93" column="49" lean-forward="true" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+        <state relative-caret-position="772">
+          <caret line="95" column="43" lean-forward="true" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/cslg/Online_examination_system/Action/Teacher/ExamManage/AddExanAction.java">
+    <entry file="file://$PROJECT_DIR$/web/attendExamError.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="853">
+          <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/contactIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="311" column="17" lean-forward="false" selection-start-line="311" selection-start-column="17" selection-end-line="311" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/courseIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="312" column="17" lean-forward="false" selection-start-line="312" selection-start-column="17" selection-end-line="312" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/courseInformation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="323" column="17" lean-forward="false" selection-start-line="323" selection-start-column="17" selection-end-line="323" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/examIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1663">
+          <caret line="345" column="13" lean-forward="false" selection-start-line="345" selection-start-column="13" selection-end-line="345" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/gradeIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="314" column="17" lean-forward="false" selection-start-line="314" selection-start-column="17" selection-end-line="314" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/gradeInformation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="335" column="13" lean-forward="false" selection-start-line="335" selection-start-column="13" selection-end-line="335" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="172" column="17" lean-forward="false" selection-start-line="172" selection-start-column="17" selection-end-line="172" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/managerIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="161" column="13" lean-forward="false" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/questionBankIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="314" column="17" lean-forward="false" selection-start-line="314" selection-start-column="17" selection-end-line="314" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/studentExam.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="250" column="8" lean-forward="true" selection-start-line="250" selection-start-column="8" selection-end-line="272" selection-end-column="17" />
+        <state relative-caret-position="14">
+          <caret line="246" column="15" lean-forward="false" selection-start-line="246" selection-start-column="15" selection-end-line="246" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/studentInformation.jsp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="211" column="8" lean-forward="false" selection-start-line="211" selection-start-column="8" selection-end-line="233" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/updateQuestion.jsp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="853">
-          <caret line="233" column="17" lean-forward="false" selection-start-line="233" selection-start-column="17" selection-end-line="233" selection-end-column="17" />
+          <caret line="355" column="17" lean-forward="false" selection-start-line="355" selection-start-column="17" selection-end-line="355" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/updateQuestionBankInformation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="361" column="17" lean-forward="false" selection-start-line="361" selection-start-column="17" selection-end-line="361" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploadTeacher.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="141" column="57" lean-forward="false" selection-start-line="141" selection-start-column="57" selection-end-line="141" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploadGrade.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="317" column="13" lean-forward="false" selection-start-line="317" selection-start-column="13" selection-end-line="317" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/uploadExam.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="409" column="17" lean-forward="false" selection-start-line="409" selection-start-column="17" selection-end-line="409" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/updateStudent.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="309" column="13" lean-forward="false" selection-start-line="309" selection-start-column="13" selection-end-line="309" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/studentIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="220" column="17" lean-forward="false" selection-start-line="220" selection-start-column="17" selection-end-line="220" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/questionBankInformation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="337" column="13" lean-forward="false" selection-start-line="337" selection-start-column="13" selection-end-line="337" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5bae9e0-314b-4504-815a-f2be3f84f939/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="803">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="39" />
           <folding />
         </state>
       </provider>

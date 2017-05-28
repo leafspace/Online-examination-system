@@ -120,7 +120,7 @@
                                 <div class="portlet-body form">
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="portlet_tab1">
-                                            <form action="sendPapar.do" class="form-horizontal" name="examPapar" method="get">
+                                            <form action="sendPapar.do" class="form-horizontal" name="examPapar" method="post">
                                                 <%
                                                     for(int i = 0; i < oneChoicePapar.size(); ++i) {
                                                         Question question = oneChoicePapar.get(i);
