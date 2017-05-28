@@ -139,11 +139,11 @@
                                                         <td><%=score%> </td>
                                                         <td>
                                                             <%
-                                                                if(score >= 80) {
+                                                                if(score >= allScore * 0.8) {
                                                             %>
                                                                     <span class="label label-success label-mini">良好</span>
                                                             <%
-                                                                } else if(score >= 60) {
+                                                                } else if(score >= allScore * 0.6) {
                                                             %>
                                                                     <span class="label label-warning label-mini">合格</span>
                                                             <%
@@ -208,6 +208,29 @@
             jQuery(document).ready(function() {
                App.init();
             });
+        </script>
+        <script language="javascript">
+            //防止页面后退
+            history.pushState(null, null, document.URL);
+            window.addEventListener('popstate', function () {
+                history.pushState(null, null, document.URL);
+            });
+
+            document.onkeydown = function() {
+                if(event.keyCode==116) {
+                    event.keyCode=0;
+                    event.returnValue = false;
+                }
+            }
+
+            document.oncontextmenu = function() {
+                event.returnValue = false;
+            }
+
+            function submitPapar(){
+                document.examPapar.submit();
+            }
+
         </script>
     </body>
 </html>

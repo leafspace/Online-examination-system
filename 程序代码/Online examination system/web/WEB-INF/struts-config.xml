@@ -47,8 +47,10 @@
         <form-bean name="addTeacherActionForm" type="cn.cslg.Online_examination_system.ActionForm.Manager.AddTeacherActionForm" />
         <form-bean name="tobeTeacherActionForm" type="cn.cslg.Online_examination_system.ActionForm.Manager.TobeTeacherActionForm" />
 
-        <form-bean name="showExamListAction" type="cn.cslg.Online_examination_system.ActionForm.Student.ShowExamListActionForm" />
-        <form-bean name="showExamScoreAction" type="cn.cslg.Online_examination_system.ActionForm.Student.ShowExamScoreActionForm" />
+        <form-bean name="showExamListActionForm" type="cn.cslg.Online_examination_system.ActionForm.Student.ShowExamListActionForm" />
+        <form-bean name="showExamScoreActionForm" type="cn.cslg.Online_examination_system.ActionForm.Student.ShowExamScoreActionForm" />
+        <form-bean name="attendExamActionForm" type="cn.cslg.Online_examination_system.ActionForm.Student.AttendExamActionForm" />
+        <form-bean name="sendPaparActionForm" type="cn.cslg.Online_examination_system.ActionForm.Student.SendPaparActionForm" />
     </form-beans>
 
     <action-mappings>
@@ -178,8 +180,15 @@
         <action path="/showExamList" type="cn.cslg.Online_examination_system.Action.Student.ShowExamListAction" name="showStudentActionForm" scope="request">
             <forward name="studentIndex" path="/studentIndex.jsp" />
         </action>
-        <action path="/showExamScore" type="cn.cslg.Online_examination_system.Action.Student.ShowExamScoreAction" name="showExamScoreAction" scope="request">
+        <action path="/showExamScore" type="cn.cslg.Online_examination_system.Action.Student.ShowExamScoreAction" name="showExamScoreActionForm" scope="request">
             <forward name="studentInformation" path="/studentInformation.jsp" />
+        </action>
+        <action path="/attendExam" type="cn.cslg.Online_examination_system.Action.Student.AttendExamAction" name="attendExamActionForm" scope="request">
+            <forward name="attendExam" path="/studentExam.jsp" />
+            <forward name="error" path="/attendExamError.jsp" />
+        </action>
+        <action path="/sendPapar" type="cn.cslg.Online_examination_system.Action.Student.SendPaparAction" name="sendPaparActionForm" scope="request">
+            <forward name="examScoreInformation" path="/showExamScore.do" />
         </action>
     </action-mappings>
 </struts-config>

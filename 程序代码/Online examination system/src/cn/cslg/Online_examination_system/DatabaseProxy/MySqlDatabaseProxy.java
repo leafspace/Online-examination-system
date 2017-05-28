@@ -795,12 +795,12 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
         return this.getResultSetID(resultSet);
     }
 
-    public int queryStudentScore(int examID, int userID) {
+    public double queryStudentScore(int examID, int userID) {
         String sqlStr = "SELECT score FROM examscore WHERE userID = " + userID + " AND examID = " + examID + ";";
         ResultSet resultSet = this.databaseConnection.query(sqlStr);
         try {
             if(resultSet.next()) {
-                return Integer.parseInt(resultSet.getString(1));
+                return Double.parseDouble(resultSet.getString(1));
             } else {
                 return 0;
             }
@@ -825,6 +825,16 @@ public class MySqlDatabaseProxy implements InterfaceDatabaseProxy {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean addStudentScore(int examID, int userID, double score) {
+        String sqlStr = "INSERT INTO examscore VALUES (" + examID + ", " + userID + ", " + score + ");";
+        int resultNumber = this.databaseConnection.update(sqlStr);
+        if(resultNumber != 1) {
+            System.out.println("Warning (MySqlDatabaseProxy - addStudentScore) : The effect is wrong ! ");
+            return false;
+        }
+        return true;
     }
 
     public boolean clearStudentScore(int examID, int userID) {

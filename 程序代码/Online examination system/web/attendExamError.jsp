@@ -36,7 +36,7 @@
 					Sorry
 				</div>
 				<div class="details">
-					<h3>现在还不是考试时间</h3>
+					<h3><%=request.getAttribute("error")%></h3>
 					<p>
 						三秒后为您跳转到主页.<br />
 						或点击<a href="showExamList.do">这里</a>

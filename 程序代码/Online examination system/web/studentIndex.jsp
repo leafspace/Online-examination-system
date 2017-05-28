@@ -138,11 +138,11 @@
                                         11.抢夺、窃取他人试卷、答卷或者强迫他人为自己抄袭提供方便的;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         我承诺在考试过程中自觉遵守，诚信考试，绝不作弊。若有违反考场规则有关规定，则自愿接受有关规定的处理。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     </div>
-                                    <form action="#" class="form-horizontal">
+                                    <form action="attendExam.do" class="form-horizontal">
                                         <div class="control-group">
                                             <label class="control-label">考试列表</label>
                                             <div class="controls">
-                                                <select class="span6 m-wrap" data-placeholder="选择一个考试" tabindex="1">
+                                                <select class="span6 m-wrap" data-placeholder="选择一个考试" tabindex="1" name="examID">
                                                     <%
                                                         for(Exam exam : noAttendExams) {
                                                     %>

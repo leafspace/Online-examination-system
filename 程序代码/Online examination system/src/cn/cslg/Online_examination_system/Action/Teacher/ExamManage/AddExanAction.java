@@ -22,10 +22,10 @@ import javax.servlet.http.HttpServletResponse;
 public class AddExanAction extends Action {
     private String formatDate(String examDate, String examTime) {
         String[] str = examDate.split("/");
-        String day = str[0];
-        String month = str[1];
+        String day = str[1];
+        String month = str[0];
         String year = str[2];
-        String date = day + "-" + month + "-" + day + " " + examTime;
+        String date = year + "-" + month + "-" + day + " " + examTime;
         return date;
     }
 
