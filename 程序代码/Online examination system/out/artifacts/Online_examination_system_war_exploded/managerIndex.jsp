@@ -137,4 +137,27 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 	<script src="assets/js/paper-dashboard.js"></script>
 	<script src="assets/js/demo.js"></script>
+    <script language="javascript">
+        //防止页面后退
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, document.URL);
+        });
+
+        document.onkeydown = function() {
+            if(event.keyCode==116) {
+                event.keyCode=0;
+                event.returnValue = false;
+            }
+        }
+
+        document.oncontextmenu = function() {
+            event.returnValue = false;
+        }
+
+        function submitPapar(){
+            document.examPapar.submit();
+        }
+
+    </script>
 </html>
