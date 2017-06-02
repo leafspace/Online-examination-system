@@ -46,6 +46,7 @@ public class UpdateQuestionAction extends Action {
         QuestionBank questionBank = teacher.queryQuestionBank(questionBankID);
         ArrayList<Question> questions = teacher.queryAllQuestion(questionBankID);
 
+        request.setAttribute("type", "edit");
         request.setAttribute("questions", questions);
         request.setAttribute("questionBank", questionBank);
         return mapping.findForward("questionBankInformation");

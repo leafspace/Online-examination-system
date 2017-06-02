@@ -78,8 +78,7 @@ public class UploadGradeAction extends Action {
         }
 
         if(this.isRepeatName(gradeName, grades)) {
-            request.setAttribute("error", "您已有相同的班级名");
-            return mapping.findForward("error");
+            gradeName += getRandomString(5);
         }
 
         int gradeID = teacher.addGrade(gradeName, students);

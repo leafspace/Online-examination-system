@@ -42,7 +42,8 @@ public class Teacher extends User {
      * @function 依据课程ID删除课程
 	 */
 	public boolean deleteCourse(int courseID) {
-		return this.interfaceDatabaseProxy.deleteCourse(courseID);
+		boolean isSuccess = this.deleteAllQuestionBank(courseID);
+		return isSuccess & this.interfaceDatabaseProxy.deleteCourse(courseID);
 	}
 
 	/**
@@ -111,6 +112,15 @@ public class Teacher extends User {
 		return isSuccess;
 	}
 
+	public boolean deleteAllQuestionBank(int courseID) {
+	    boolean isSuccess = true;
+        ArrayList<QuestionBank> questionBanks = this.interfaceDatabaseProxy.queryAllQuestionBank(courseID);
+        for(QuestionBank questionBank : questionBanks) {
+            isSuccess = isSuccess & this.deleteQuestionBank(questionBank.getQuestionBankID());
+        }
+        return isSuccess;
+    }
+
 	/**
      * @param courseID 课程ID
 	 * @param questionBankName 题库名
@@ -135,7 +145,7 @@ public class Teacher extends User {
 	 */
 	public int addQuestionBank(int courseID, String questionBankName, ArrayList<Question> questionList) {
 		int questionBankID = this.addQuestionBank(courseID, questionBankName);
-		if(questionBankID >= 0) {
+		if(questionBankID >= 0 & questionList != null) {
 		    for(int i = 0; i < questionList.size(); ++i) {
                 this.interfaceDatabaseProxy.addQuestion(questionBankID, questionList.get(i));
             }
@@ -184,7 +194,8 @@ public class Teacher extends User {
 	}
 
 	/**
-	 * @param gradeID 
+	/**
+	 * @param gradeID
 	 * @return grade 班级对象
      * @function 依据班级ID获取班级对象
 	 */

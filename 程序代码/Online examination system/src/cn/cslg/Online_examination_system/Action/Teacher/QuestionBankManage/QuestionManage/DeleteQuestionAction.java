@@ -37,7 +37,7 @@ public class DeleteQuestionAction extends Action {
         ArrayList<Question> questions = teacher.queryAllQuestion(questionBankID);
         request.setAttribute("questionBank", questionBank);
         request.setAttribute("questions", questions);
-
+        request.setAttribute("type", "edit");
         return mapping.findForward("questionBankInformation");
     }
 }

@@ -12,7 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
-        <title>在线考试系统 | 教师管理页 - 课程管理</title>
+        <title>在线考试系统 | 教师管理页 - 考试管理</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta content="" name="description" />
         <meta content="" name="author" />
@@ -236,6 +236,26 @@
 
                                                             <div id="collapse_<%=i+1%>" class="accordion-body collapse" style="height: 0px;">
                                                                 <div class="accordion-inner">
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>考试名：<%=exams.get(i).examName%></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>考试时间：<%=exams.get(i).examTime%></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>考试持续时间：<%=exams.get(i).examMinutes%> (分钟)</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>单选题数量：<%=exams.get(i).onechoiceNumber%> 单选题分值：<%=exams.get(i).onechoiceScore%></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>多选题数量：<%=exams.get(i).morechoiceNumber%> 多选题分值：<%=exams.get(i).morechoiceScore%></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>判断题数量：<%=exams.get(i).judgeNumber%> 判断题分值：<%=exams.get(i).judgeScore%></td>
+                                                                        </tr>
+                                                                    </table>
                                                                     <table class="table table-striped table-hover table-bordered dataTable" id="sample_editable_<%=i+1%>" aria-describedby="sample_editable_1_info">
                                                                         <thead>
                                                                         <tr role="row">

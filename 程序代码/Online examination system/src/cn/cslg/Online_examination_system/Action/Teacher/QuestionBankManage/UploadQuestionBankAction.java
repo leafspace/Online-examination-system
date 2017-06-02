@@ -80,9 +80,7 @@ public class UploadQuestionBankAction extends Action {
         }
 
         if(this.isRepeatName(questionBankName, questionBanks)) {
-            request.setAttribute("type", "add");
-            request.setAttribute("error", "您已有相同的题库名");
-            return mapping.findForward("error");
+            questionBankName += this.getRandomString(5);
         }
 
         int questionBankID = teacher.addQuestionBank(Integer.parseInt(uploadQuestionBankActionForm.getCourseID()), questionBankName, questions);

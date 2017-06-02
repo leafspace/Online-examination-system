@@ -41,14 +41,24 @@ public class AddExanAction extends Action {
         String[] gradeIDs = addExamActionForm.getGradeIDs();
         String examDate = addExamActionForm.getExamDate();
         String examTime = addExamActionForm.getExamTime();
-        int examMinutes = Integer.parseInt(addExamActionForm.getExamMinutes());
-        int examStratMinutes = Integer.parseInt(addExamActionForm.getExamStratMinutes());
-        int oneChoiceNumber = Integer.parseInt(addExamActionForm.getOneChoiceNumber());
-        double oneChoiceScore = Double.parseDouble(addExamActionForm.getOneChoiceScore());
-        int judgeNumber = Integer.parseInt(addExamActionForm.getJudgeNumber());
-        double judgeScore = Double.parseDouble(addExamActionForm.getJudgeScore());
-        int moreChoiceNumber = Integer.parseInt(addExamActionForm.getMoreChoiceNumber());
-        double moreChoiceScore = Double.parseDouble(addExamActionForm.getMoreChoiceScore());
+        int examMinutes = 5;
+        int examStratMinutes = 0;
+        int oneChoiceNumber = 1;
+        double oneChoiceScore = 1;
+        int judgeNumber = 1;
+        double judgeScore = 1;
+        int moreChoiceNumber = 1;
+        double moreChoiceScore = 1;
+        try {
+            examMinutes = Integer.parseInt(addExamActionForm.getExamMinutes());
+            oneChoiceNumber = Integer.parseInt(addExamActionForm.getOneChoiceNumber());
+            oneChoiceScore = Double.parseDouble(addExamActionForm.getOneChoiceScore());
+            judgeNumber = Integer.parseInt(addExamActionForm.getJudgeNumber());
+            judgeScore = Double.parseDouble(addExamActionForm.getJudgeScore());
+            moreChoiceNumber = Integer.parseInt(addExamActionForm.getMoreChoiceNumber());
+            moreChoiceScore = Double.parseDouble(addExamActionForm.getMoreChoiceScore());
+        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        }
 
         for(int i = 0; i < gradeIDs.length; ++i) {
             teacher.addExam(new Exam(Integer.parseInt(gradeIDs[i]), questionBankID, examName,
