@@ -171,10 +171,9 @@ CREATE TABLE `user` (
   KEY `userID` (`userID`),
   KEY `gradeID` (`gradeID`),
   CONSTRAINT `user_ibfk_1` FOREIGN KEY (`gradeID`) REFERENCES `grade` (`gradeID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', '1', 'administrator', 'admin', 'Manager');
-INSERT INTO `user` VALUES ('2', '2', 'teacher', '123456', 'Teacher');

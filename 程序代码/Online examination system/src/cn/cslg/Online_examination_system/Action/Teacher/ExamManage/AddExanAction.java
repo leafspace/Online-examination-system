@@ -51,11 +51,40 @@ public class AddExanAction extends Action {
         double moreChoiceScore = 1;
         try {
             examMinutes = Integer.parseInt(addExamActionForm.getExamMinutes());
+        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        }
+
+        try {
             oneChoiceNumber = Integer.parseInt(addExamActionForm.getOneChoiceNumber());
+        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        }
+
+        try {
             oneChoiceScore = Double.parseDouble(addExamActionForm.getOneChoiceScore());
+        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        }
+
+        try {
             judgeNumber = Integer.parseInt(addExamActionForm.getJudgeNumber());
+        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        }
+
+        try {
+            judgeNumber = Integer.parseInt(addExamActionForm.getJudgeNumber());
+        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        }
+
+        try {
             judgeScore = Double.parseDouble(addExamActionForm.getJudgeScore());
+        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        }
+
+        try {
             moreChoiceNumber = Integer.parseInt(addExamActionForm.getMoreChoiceNumber());
+        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        }
+
+        try {
             moreChoiceScore = Double.parseDouble(addExamActionForm.getMoreChoiceScore());
         } catch (IndexOutOfBoundsException | NumberFormatException e) {
         }
