@@ -7,20 +7,20 @@
 -------------------
     
 * 数据库：
-    >版本：Mysql 5.3
-    数据库名：online_examination_system
-    数据库字符格式：utf-8
-    数据库数据文件：见附件
-    数据库ip控制：Online_examination_system\DatabaseConnector\MySqlDatabaseConnection.java
+    >版本：Mysql 5.3<br/>
+    数据库名：online_examination_system<br/>
+    数据库字符格式：utf-8<br/>
+    数据库数据文件：见附件<br/>
+    数据库ip控制：Online_examination_system\DatabaseConnector\MySqlDatabaseConnection.java<br/>
 
 * 运行环境：
-   > IDE版本：Inteilj IDEA 2017.1
-    Tomcat版本：9.0.M13
+   > IDE版本：Inteilj IDEA 2017.1<br/>
+    Tomcat版本：9.0.M13<br/>
     
 * 设计缺陷：
-   > 1.同一个用户能够同时登陆
-    2.当多个班级中存在相同学生名的时候系统无法识别用户人员
-    3.用户提交的bug问题管理员没有设计功能查看
-    4.考试提交时间限制没有控制
-    5.断电保护功能
-    6.系统日志功能
+   > 1.同一个用户能够同时登陆<br/>
+    2.当多个班级中存在相同学生名的时候系统无法识别用户人员<br/>
+    3.用户提交的bug问题管理员没有设计功能查看<br/>
+    4.考试提交时间限制没有控制<br/>
+    5.断电保护功能<br/>
+  6.系统日志功能<br/>
